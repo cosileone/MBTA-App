@@ -1,0 +1,4898 @@
+{
+  "TripList": {
+    "CurrentTime": 1350686050,
+    "Line": "Red",
+    "Trips": [
+      {
+        "TripID": "R982F9C4B",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 293
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 367
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 486
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 651
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 791
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DC3",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350685248,
+          "Train": "1821",
+          "Lat": 42.20749,
+          "Long": -71.00173,
+          "Heading": 190
+        },
+        "Predictions": [
+          {
+            "StopID": "70098",
+            "Stop": "North Quincy",
+            "Seconds": 102
+          },
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 549
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D65",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1227
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 1320
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 1444
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 1602
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 1824
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 2073
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 2350
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 2513
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 2615
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 2707
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 2836
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 2967
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 3163
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 3659
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 3790
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 3914
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 4099
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 4427
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C83",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 1274
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 1348
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 1467
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 1534
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 1673
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 1844
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 1975
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 2021
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 2128
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 2235
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 2377
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 2536
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 2785
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 3011
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 3218
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 3362
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 3748
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C66",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 2749
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 2851
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 2982
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 3153
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 3277
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 3421
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 3676
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 3860
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 3972
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 4077
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 4234
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 4378
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 4459
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 4608
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 4785
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 4911
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 5092
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D86",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1785
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 1878
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 2028
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 2198
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 2421
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 2642
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 2737
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 2881
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 2988
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 3075
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 3219
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 3350
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 3557
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 4047
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 4178
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 4251
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 4447
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 4805
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E33",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 5620
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 5696
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 5824
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 5988
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 6208
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 6356
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 6480
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 6605
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 6722
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 6808
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 6949
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 7072
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 7292
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CC1",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 4184
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 4265
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 4394
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 4558
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 4771
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 4919
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 5074
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 5199
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 5260
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 5385
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 5527
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 5661
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 5815
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 5974
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D7D",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 6917
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 7023
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 7151
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D4B",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 6258
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 6364
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 6492
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 6658
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 6879
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 7016
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DDE",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 6884
+          },
+          {
+            "StopID": "70104",
+            "Stop": "Quincy Adams",
+            "Seconds": 7084
+          },
+          {
+            "StopID": "70102",
+            "Stop": "Quincy Center",
+            "Seconds": 7315
+          },
+          {
+            "StopID": "70100",
+            "Stop": "Wollaston",
+            "Seconds": 7492
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CDC",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 4784
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 4865
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 4994
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 5165
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 5388
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 5537
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 5660
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 5784
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 5901
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 5987
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 6128
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 6249
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 6395
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 6556
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 6715
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 6835
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 6996
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D0F",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 6276
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 6352
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 6490
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 6656
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 6877
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 7014
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E47",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 5879
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 5955
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 6083
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 6247
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 6481
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 6630
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CC0",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 2414
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 2687
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 2771
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 2955
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 3089
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 3244
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 3383
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 3524
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 3623
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 3712
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 3861
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 4020
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 4182
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 4392
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 4590
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 4720
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 4914
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D9D",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 2784
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 2907
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 3133
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 3303
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 3522
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 3664
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 3820
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 3962
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 4071
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 4158
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 4249
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 4377
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 4591
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 5090
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 5232
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 5440
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 5628
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 5916
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D0D",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1965
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 2001
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 2137
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 2307
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 2530
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 2655
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 2811
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 2953
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 3062
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 3149
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 3293
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 3424
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 3568
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 3671
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 3848
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 3974
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 4188
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C67",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 5759
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 5835
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 5962
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 6081
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 6219
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 6358
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 6492
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 6639
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 6725
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 6807
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 6939
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 7091
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 7140
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D95",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 5799
+          },
+          {
+            "StopID": "70104",
+            "Stop": "Quincy Adams",
+            "Seconds": 5999
+          },
+          {
+            "StopID": "70102",
+            "Stop": "Quincy Center",
+            "Seconds": 6230
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E12",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 4484
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 4565
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 4694
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 4865
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 5078
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 5204
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 5351
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 5476
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 5573
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 5662
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 5839
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 5960
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 6175
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 6692
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 6815
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 6983
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CFB",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 5792
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 5868
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 5996
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 6160
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 6380
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 6448
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 6594
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 6719
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 6836
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 6922
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CDB",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 2762
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 2826
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 3000
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 3171
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 3307
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 3505
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 3637
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 3780
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 3879
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 3976
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 4124
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 4284
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 4445
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 4614
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 4804
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 4930
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 5137
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E11",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 2194
+          },
+          {
+            "StopID": "70104",
+            "Stop": "Quincy Adams",
+            "Seconds": 2385
+          },
+          {
+            "StopID": "70102",
+            "Stop": "Quincy Center",
+            "Seconds": 2583
+          },
+          {
+            "StopID": "70100",
+            "Stop": "Wollaston",
+            "Seconds": 2801
+          },
+          {
+            "StopID": "70098",
+            "Stop": "North Quincy",
+            "Seconds": 2926
+          },
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 3462
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 3644
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 3777
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 4023
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 4122
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 4324
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 4472
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 4632
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 4793
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 4992
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 5186
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 5310
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 5517
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CF9",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1391
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 1484
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 1608
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 1766
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 1988
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 2186
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 2463
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 2562
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 2665
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 2752
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 2896
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 3018
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 3160
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 3209
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 3388
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 3433
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 3631
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D7B",
+        "Destination": "Braintree",
+        "Note": "Big Red",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1572
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 1665
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 1789
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 1947
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 2198
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 2413
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 2579
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 2736
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 2839
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 2926
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 3070
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 3192
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 3386
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 3892
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 4023
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 4196
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 4381
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 4735
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C97",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 1629
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 1703
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 1787
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 1958
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 2181
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 2389
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 2521
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 2663
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 2768
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 2859
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 3005
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 3164
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 3323
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 3422
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 3616
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 3746
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 3967
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DFB",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 1720
+          },
+          {
+            "StopID": "70104",
+            "Stop": "Quincy Adams",
+            "Seconds": 1911
+          },
+          {
+            "StopID": "70102",
+            "Stop": "Quincy Center",
+            "Seconds": 2155
+          },
+          {
+            "StopID": "70100",
+            "Stop": "Wollaston",
+            "Seconds": 2397
+          },
+          {
+            "StopID": "70098",
+            "Stop": "North Quincy",
+            "Seconds": 2486
+          },
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 2930
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 3006
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 3139
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 3285
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 3384
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 3473
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 3623
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 3782
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 3935
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 4145
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 4366
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 4496
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 4717
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C4D",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 5225
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 5352
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 5471
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 5609
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 5766
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 5897
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 6045
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 6137
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 6234
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 6365
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 6482
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 6631
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 6823
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 7008
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 7138
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 7326
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D9E",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 6083
+          },
+          {
+            "StopID": "70104",
+            "Stop": "Quincy Adams",
+            "Seconds": 6283
+          },
+          {
+            "StopID": "70102",
+            "Stop": "Quincy Center",
+            "Seconds": 6348
+          },
+          {
+            "StopID": "70100",
+            "Stop": "Wollaston",
+            "Seconds": 6516
+          },
+          {
+            "StopID": "70098",
+            "Stop": "North Quincy",
+            "Seconds": 6641
+          },
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 7038
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 7206
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 7340
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 7488
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 7574
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 7656
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 7788
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E46",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 3136
+          },
+          {
+            "StopID": "70104",
+            "Stop": "Quincy Adams",
+            "Seconds": 3330
+          },
+          {
+            "StopID": "70102",
+            "Stop": "Quincy Center",
+            "Seconds": 3546
+          },
+          {
+            "StopID": "70100",
+            "Stop": "Wollaston",
+            "Seconds": 3801
+          },
+          {
+            "StopID": "70098",
+            "Stop": "North Quincy",
+            "Seconds": 3971
+          },
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 4339
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 4516
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 4647
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 4789
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 4889
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 4990
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 5120
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 5266
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 5421
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 5622
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 5880
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 6003
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 6176
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CDA",
+        "Destination": "Ashmont",
+        "Position": {
+          "Timestamp": 1350685708,
+          "Train": "1875",
+          "Lat": 42.39621,
+          "Long": -71.14054,
+          "Heading": 265
+        },
+        "Predictions": [
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 82
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 255
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 486
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 634
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 955
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 1141
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 1254
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 1347
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 1402
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 1569
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 1716
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 1884
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 2069
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 2199
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 2291
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C65",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350686009,
+          "Train": "1806",
+          "Lat": 42.28643,
+          "Long": -71.06448,
+          "Heading": 330
+        },
+        "Predictions": [
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 32
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 151
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 316
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 456
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 627
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 768
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 927
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 1053
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 1177
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 1345
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 1504
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 1683
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 1970
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 2167
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 2332
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 2718
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C4A",
+        "Destination": "Ashmont",
+        "Position": {
+          "Timestamp": 1350685993,
+          "Train": "1724",
+          "Lat": 42.29076,
+          "Long": -71.0653,
+          "Heading": 160
+        },
+        "Predictions": [
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 22
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D49",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 455
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 550
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 675
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 848
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 1076
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 1304
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 1589
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 1775
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 1888
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 1932
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 2068
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 2198
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 2397
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 2501
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 2629
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 2803
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 2998
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 3298
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DDC",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 729
+          },
+          {
+            "StopID": "70104",
+            "Stop": "Quincy Adams",
+            "Seconds": 922
+          },
+          {
+            "StopID": "70102",
+            "Stop": "Quincy Center",
+            "Seconds": 1139
+          },
+          {
+            "StopID": "70100",
+            "Stop": "Wollaston",
+            "Seconds": 1319
+          },
+          {
+            "StopID": "70098",
+            "Stop": "North Quincy",
+            "Seconds": 1472
+          },
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 1540
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 1645
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 1776
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 1822
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 1929
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 2036
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 2178
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 2320
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 2485
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 2711
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 2908
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 3073
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 3454
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DFA",
+        "Destination": "Braintree",
+        "Position": {
+          "Timestamp": 1350686000,
+          "Train": "1708",
+          "Lat": 42.34064,
+          "Long": -71.05708,
+          "Heading": 175
+        },
+        "Predictions": [
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 3
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 215
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 739
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 888
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 1068
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 1264
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 1553
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E31",
+        "Destination": "Braintree",
+        "Position": {
+          "Timestamp": 1350686008,
+          "Train": "1826",
+          "Lat": 42.36553,
+          "Long": -71.10403,
+          "Heading": 130
+        },
+        "Predictions": [
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 106
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 340
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 548
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 674
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 780
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 932
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 1065
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 1222
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 1746
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 1912
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 2088
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 2282
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 2571
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DC8",
+        "Destination": "Braintree",
+        "Position": {
+          "Timestamp": 1350685985,
+          "Train": "1860",
+          "Lat": 42.23131,
+          "Long": -71.00711,
+          "Heading": 180
+        },
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 215
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C82",
+        "Destination": "Ashmont",
+        "Position": {
+          "Timestamp": 1350686022,
+          "Train": "1643",
+          "Lat": 42.3506,
+          "Long": -71.05569,
+          "Heading": 130
+        },
+        "Predictions": [
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 42
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 175
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 323
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 507
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 702
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 832
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 967
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C64",
+        "Destination": "Ashmont",
+        "Position": {
+          "Timestamp": 1350685964,
+          "Train": "1885",
+          "Lat": 42.31872,
+          "Long": -71.0523,
+          "Heading": 170
+        },
+        "Predictions": [
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 10
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 205
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 335
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 468
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DDB",
+        "Destination": "Braintree",
+        "Position": {
+          "Timestamp": 1350686006,
+          "Train": "1870",
+          "Lat": 42.26545,
+          "Long": -71.01921,
+          "Heading": 135
+        },
+        "Predictions": [
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 81
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 270
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 562
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CF8",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350685940,
+          "Train": "1752",
+          "Lat": 42.36147,
+          "Long": -71.07437,
+          "Heading": 275
+        },
+        "Predictions": [
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 59
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 217
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 500
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 694
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 861
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1194
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D7A",
+        "Destination": "Alewife",
+        "Note": "Big Red",
+        "Position": {
+          "Timestamp": 1350686031,
+          "Train": "1811",
+          "Lat": 42.35715,
+          "Long": -71.06395,
+          "Heading": 310
+        },
+        "Predictions": [
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 46
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 234
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 411
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 694
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 886
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 1053
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1475
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D94",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 2433
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 2531
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 2667
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 2766
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 2985
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 3127
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 3283
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 3425
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 3534
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 3621
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 3765
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 3896
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 4092
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 4591
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 4722
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 4895
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 4996
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 5024
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D85",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350686021,
+          "Train": "1815",
+          "Lat": 42.35266,
+          "Long": -71.05536,
+          "Heading": 290
+        },
+        "Predictions": [
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 96
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 220
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 384
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 572
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 749
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 1032
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 1260
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 1412
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1788
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DAE",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350684902,
+          "Train": "1851",
+          "Lat": 42.20749,
+          "Long": -71.00156,
+          "Heading": 190
+        },
+        "Predictions": [
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 110
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DEC",
+        "Destination": "Braintree",
+        "Position": {
+          "Timestamp": 1350685780,
+          "Train": "1844",
+          "Lat": 42.3185,
+          "Long": -71.05212,
+          "Heading": 170
+        },
+        "Predictions": [
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 164
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 319
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 511
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 702
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 997
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E10",
+        "Destination": "Braintree",
+        "Position": {
+          "Timestamp": 1350686034,
+          "Train": "1632",
+          "Lat": 42.35524,
+          "Long": -71.06018,
+          "Heading": 135
+        },
+        "Predictions": [
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 89
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 241
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 374
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 586
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 1110
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 1313
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 1486
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 1680
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 1969
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D48",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350686017,
+          "Train": "1628",
+          "Lat": 42.39679,
+          "Long": -71.124,
+          "Heading": 285
+        },
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 258
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D0C",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350685990,
+          "Train": "1841",
+          "Lat": 42.3317,
+          "Long": -71.057,
+          "Heading": 0
+        },
+        "Predictions": [
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 3
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 162
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 288
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 412
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 576
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 764
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 941
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 1220
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 1440
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 1592
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1968
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CE7",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 736
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 831
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 956
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 1129
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 1396
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 1620
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 1907
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 2113
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 2215
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 2302
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 2438
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 2568
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 2712
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 2921
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 3100
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 3226
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 3406
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D93",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350685608,
+          "Train": "1502",
+          "Lat": 42.2773,
+          "Long": -71.03159,
+          "Heading": 330
+        },
+        "Predictions": [
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": -25
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 173
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 314
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 473
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 599
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 723
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 887
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 1075
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 1206
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 1458
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 1678
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 1830
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 2287
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D9C",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350685891,
+          "Train": "1747",
+          "Lat": 42.26791,
+          "Long": -71.02174,
+          "Heading": 315
+        },
+        "Predictions": [
+          {
+            "StopID": "70098",
+            "Stop": "North Quincy",
+            "Seconds": -25
+          },
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 409
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 608
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 749
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 908
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 1034
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 1158
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 1288
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 1447
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 1626
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 1878
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CAC",
+        "Destination": "Ashmont",
+        "Position": {
+          "Timestamp": 1350685916,
+          "Train": "1522",
+          "Lat": 42.36525,
+          "Long": -71.10323,
+          "Heading": 130
+        },
+        "Predictions": [
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": -25
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 208
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 416
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 531
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 637
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 789
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 922
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 1070
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 1229
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 1418
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 1548
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 1711
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CBF",
+        "Destination": "Ashmont",
+        "Position": {
+          "Timestamp": 1350686023,
+          "Train": "1517",
+          "Lat": 42.37396,
+          "Long": -71.11874,
+          "Heading": 130
+        },
+        "Predictions": [
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 200
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 349
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 583
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 791
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 906
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 1012
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 1164
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 1240
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 1387
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 1568
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 1757
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 1875
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 2043
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E22",
+        "Destination": "Braintree",
+        "Position": {
+          "Timestamp": 1350685926,
+          "Train": "1712",
+          "Lat": 42.36228,
+          "Long": -71.08379,
+          "Heading": 95
+        },
+        "Predictions": [
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 46
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 238
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 380
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 486
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 638
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 770
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 982
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 1436
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 1574
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 1747
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 1910
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 2199
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D64",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350685943,
+          "Train": "1509",
+          "Lat": 42.36267,
+          "Long": -71.08724,
+          "Heading": 275
+        },
+        "Predictions": [
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": -7
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 275
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 469
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 636
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 1074
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CE6",
+        "Destination": "Alewife",
+        "Position": {
+          "Timestamp": 1350685985,
+          "Train": "1710",
+          "Lat": 42.38833,
+          "Long": -71.11894,
+          "Heading": 0
+        },
+        "Predictions": [
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 101
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 539
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C84",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 3347
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 3428
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 3554
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 3724
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 3943
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 4065
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 4265
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 4445
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 4551
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 4648
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 4796
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 4924
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 5123
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 5266
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 5450
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 5576
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 5736
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D0E",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 4053
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 4189
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 4345
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 4476
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 4620
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 4713
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 4809
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 4939
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 5085
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 5213
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 5397
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 5583
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 5706
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 5879
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C98",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 3864
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 3945
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 4195
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 4366
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 4585
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 4733
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 4933
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 5113
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 5305
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 5387
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 5528
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 5650
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 5804
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 5964
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 6148
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 6317
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 6477
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CFA",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 4435
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 4510
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 4685
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 4851
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 4987
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 5081
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 5212
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 5356
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 5449
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 5552
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 5627
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 5773
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 5928
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 6021
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 6215
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 6338
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 6511
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D7C",
+        "Destination": "Alewife",
+        "Note": "Big Red",
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 5273
+          },
+          {
+            "StopID": "70104",
+            "Stop": "Quincy Adams",
+            "Seconds": 5467
+          },
+          {
+            "StopID": "70102",
+            "Stop": "Quincy Center",
+            "Seconds": 5698
+          },
+          {
+            "StopID": "70100",
+            "Stop": "Wollaston",
+            "Seconds": 5871
+          },
+          {
+            "StopID": "70098",
+            "Stop": "North Quincy",
+            "Seconds": 5994
+          },
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 6144
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 6319
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 6450
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 6595
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 6687
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 6784
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 6912
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 7065
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 7229
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 7421
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 7606
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 7736
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 7920
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D24",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 4505
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 4580
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 4755
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 4815
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 4951
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 5057
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 5186
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 5331
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 5423
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 5520
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 5648
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 6790
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 6907
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 7091
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 7180
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 7310
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 7494
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D25",
+        "Destination": "Ashmont",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 7091
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 7197
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 7325
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 7491
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9CC2",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 7184
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 7260
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 7370
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 7529
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9D4A",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 3765
+          },
+          {
+            "StopID": "70104",
+            "Stop": "Quincy Adams",
+            "Seconds": 3959
+          },
+          {
+            "StopID": "70102",
+            "Stop": "Quincy Center",
+            "Seconds": 4136
+          },
+          {
+            "StopID": "70100",
+            "Stop": "Wollaston",
+            "Seconds": 4332
+          },
+          {
+            "StopID": "70098",
+            "Stop": "North Quincy",
+            "Seconds": 4463
+          },
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 4809
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 4981
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 5112
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 5256
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 5349
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 5449
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 5577
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 5719
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 5874
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 6075
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 6187
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 6310
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 6483
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DFC",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 4012
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 4068
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 4197
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 4361
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 4574
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 4722
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 4944
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 5078
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 5175
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 5257
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 5398
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 5520
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 5745
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 6230
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 6360
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 6565
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 6760
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 7023
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C99",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70094",
+            "Stop": "Ashmont",
+            "Seconds": 6609
+          },
+          {
+            "StopID": "70092",
+            "Stop": "Shawmut",
+            "Seconds": 6685
+          },
+          {
+            "StopID": "70090",
+            "Stop": "Fields Corner",
+            "Seconds": 6795
+          },
+          {
+            "StopID": "70088",
+            "Stop": "Savin Hill",
+            "Seconds": 6954
+          },
+          {
+            "StopID": "70086",
+            "Stop": "JFK/UMass",
+            "Seconds": 7094
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E32",
+        "Destination": "Alewife",
+        "Predictions": [
+          {
+            "StopID": "70096",
+            "Stop": "JFK/UMass",
+            "Seconds": 3324
+          },
+          {
+            "StopID": "70084",
+            "Stop": "Andrew",
+            "Seconds": 3501
+          },
+          {
+            "StopID": "70082",
+            "Stop": "Broadway",
+            "Seconds": 3632
+          },
+          {
+            "StopID": "70080",
+            "Stop": "South Station",
+            "Seconds": 3774
+          },
+          {
+            "StopID": "70078",
+            "Stop": "Downtown Crossing",
+            "Seconds": 3874
+          },
+          {
+            "StopID": "70076",
+            "Stop": "Park Street",
+            "Seconds": 3971
+          },
+          {
+            "StopID": "70074",
+            "Stop": "Charles/MGH",
+            "Seconds": 4107
+          },
+          {
+            "StopID": "70072",
+            "Stop": "Kendall/MIT",
+            "Seconds": 4267
+          },
+          {
+            "StopID": "70070",
+            "Stop": "Central Square",
+            "Seconds": 4422
+          },
+          {
+            "StopID": "70068",
+            "Stop": "Harvard Square",
+            "Seconds": 4623
+          },
+          {
+            "StopID": "70066",
+            "Stop": "Porter Square",
+            "Seconds": 4812
+          },
+          {
+            "StopID": "70064",
+            "Stop": "Davis",
+            "Seconds": 4935
+          },
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 5123
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9DDD",
+        "Destination": "Braintree",
+        "Predictions": [
+          {
+            "StopID": "70061",
+            "Stop": "Alewife",
+            "Seconds": 3404
+          },
+          {
+            "StopID": "70063",
+            "Stop": "Davis",
+            "Seconds": 3485
+          },
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 3611
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 3781
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 3954
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 4096
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 4363
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 4547
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 4659
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 4764
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 4914
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 5042
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 5256
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 5757
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 5889
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 6066
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 6254
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 6570
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9E45",
+        "Destination": "Braintree",
+        "Position": {
+          "Timestamp": 1350686024,
+          "Train": "1716",
+          "Lat": 42.3959,
+          "Long": -71.12199,
+          "Heading": 135
+        },
+        "Predictions": [
+          {
+            "StopID": "70065",
+            "Stop": "Porter Square",
+            "Seconds": 45
+          },
+          {
+            "StopID": "70067",
+            "Stop": "Harvard Square",
+            "Seconds": 218
+          },
+          {
+            "StopID": "70069",
+            "Stop": "Central Square",
+            "Seconds": 446
+          },
+          {
+            "StopID": "70071",
+            "Stop": "Kendall/MIT",
+            "Seconds": 595
+          },
+          {
+            "StopID": "70073",
+            "Stop": "Charles/MGH",
+            "Seconds": 829
+          },
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 1037
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 1152
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 1201
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 1356
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 1489
+          },
+          {
+            "StopID": "70095",
+            "Stop": "JFK/UMass",
+            "Seconds": 1699
+          },
+          {
+            "StopID": "70097",
+            "Stop": "North Quincy",
+            "Seconds": 2139
+          },
+          {
+            "StopID": "70099",
+            "Stop": "Wollaston",
+            "Seconds": 2388
+          },
+          {
+            "StopID": "70101",
+            "Stop": "Quincy Center",
+            "Seconds": 2561
+          },
+          {
+            "StopID": "70103",
+            "Stop": "Quincy Adams",
+            "Seconds": 2755
+          },
+          {
+            "StopID": "70105",
+            "Stop": "Braintree",
+            "Seconds": 3075
+          }
+        ]
+      },
+      {
+        "TripID": "R982F9C96",
+        "Destination": "Ashmont",
+        "Position": {
+          "Timestamp": 1350686033,
+          "Train": "1641",
+          "Lat": 42.36074,
+          "Long": -71.06942,
+          "Heading": 130
+        },
+        "Predictions": [
+          {
+            "StopID": "70075",
+            "Stop": "Park Street",
+            "Seconds": 121
+          },
+          {
+            "StopID": "70077",
+            "Stop": "Downtown Crossing",
+            "Seconds": 240
+          },
+          {
+            "StopID": "70079",
+            "Stop": "South Station",
+            "Seconds": 346
+          },
+          {
+            "StopID": "70081",
+            "Stop": "Broadway",
+            "Seconds": 498
+          },
+          {
+            "StopID": "70083",
+            "Stop": "Andrew",
+            "Seconds": 631
+          },
+          {
+            "StopID": "70085",
+            "Stop": "JFK/UMass",
+            "Seconds": 779
+          },
+          {
+            "StopID": "70087",
+            "Stop": "Savin Hill",
+            "Seconds": 963
+          },
+          {
+            "StopID": "70089",
+            "Stop": "Fields Corner",
+            "Seconds": 1158
+          },
+          {
+            "StopID": "70091",
+            "Stop": "Shawmut",
+            "Seconds": 1395
+          },
+          {
+            "StopID": "70093",
+            "Stop": "Ashmont",
+            "Seconds": 1558
+          }
+        ]
+      }
+    ]
+  }
+}

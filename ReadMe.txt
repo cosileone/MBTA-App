@@ -20,3 +20,12 @@ $ java -cp /path/to/MainWindowGUI.class MainWindowGUI
 We do not yet utilize Jackson in order access online data, choosing instead to parse the CSV files manually.
 
 Once the application is running, simply press the "Fetch Train Data" button located at the bottom of the application window.
+
+——————————————————————————————————————————————————————————————————
+
+
+
+To run:
+
+$ cd mbta_tree
+$ make test <--- will compile and run JsonTest

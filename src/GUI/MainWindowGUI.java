@@ -1,10 +1,17 @@
 package GUI;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class MainWindowGUI extends javax.swing.JFrame {
 	String redText;
