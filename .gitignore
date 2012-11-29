@@ -16,3 +16,5 @@ bin/TextDemo.class
 src/.DS_Store
 
 .DS_Store
+
+*.class
