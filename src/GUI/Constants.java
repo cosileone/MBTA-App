@@ -7,16 +7,6 @@ public final class Constants {
 	public static final Dimension SCREENSIZE = Toolkit.getDefaultToolkit().getScreenSize();
 	public static final Dimension GUI_DIMENSIONS = setGUIDimensions();
 	public static final String APP_TITLE = "MBTA Travel Application";
-	/* Layout for components */
-	public static final GridBagLayout GRID_BAG_LAYOUT = new GridBagLayout();
-	/* Tab Titles and Tooltip Strings */
-	public static final String MAP_TITLE = "Geo Map";
-	public static final String MAP_TOOLTIP = "Switch to MAP view to see a GEO-MAP and enter destinations to plan your trip.";
-	public static final String ITINERARY_TITLE = "Itinerary";
-	public static final String ITINERARY_TOOLTIP = "Switch to ITINERARY view to see a LINEAR-MAP and written directions to get to your destination.";
-	/* Map Tab Components */
-	public static final String INPUT_FIELD_FILLER = "Please enter a location.";
-	
 	
 	
 	
