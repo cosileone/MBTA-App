@@ -7,7 +7,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 import javax.swing.*;
-
+//Test Guest Commit
 public class MainWindowGUI extends javax.swing.JFrame {
 	String redText;
 	String orangeText;

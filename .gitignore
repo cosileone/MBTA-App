@@ -15,3 +15,21 @@ src/.DS_Store
 *.class
 
 *.class
+
+*.class
+
+bin/GUI/Constants.class
+
+bin/GUI/MainWindowGUI$1.class
+
+bin/GUI/MainWindowGUI.class
+
+bin/data/JsonTest.class
+
+bin/data/Position.class
+
+bin/data/Prediction.class
+
+bin/data/Trip.class
+
+bin/data/TripList.class
