@@ -52,11 +52,33 @@ public class MainWindowGUI extends javax.swing.JFrame {
 		window.setSize(GUI_DIMENSIONS);
 		window.setPreferredSize(GUI_DIMENSIONS);
 		
-		/* Layout for components */
-		
-		
 		/* Start Adding components to window */
+		JTabbedPane tabs = new JTabbedPane();
+		JPanel mapTabContents = makeMapTab();
+		JPanel itinTabContents = makeItinTab();
 		
+		tabs.addTab(MAP_TITLE, null, mapTabContents, MAP_TOOLTIP);
+		tabs.addTab(ITINERARY_TITLE, null, itinTabContents, ITINERARY_TOOLTIP);
+		window.add(tabs);
+		
+	}
+	
+	protected JPanel makeMapTab(){
+		JPanel mapPanel = new JPanel(GRID_BAG_LAYOUT, true);
+		JTextField inputField = new JTextField(INPUT_FIELD_FILLER, 20);
+
+		GridBagConstraints gblc = new GridBagConstraints();
+		gblc.gridx = 0;
+		gblc.gridy = 0;
+		mapPanel.add(inputField);
+		
+		
+		return mapPanel;
+	}
+	
+	protected JPanel makeItinTab(){
+		JPanel initPanel = new JPanel(GRID_BAG_LAYOUT, true);
+		return initPanel;
 	}
 	
 	public static void main(String[] args) {
