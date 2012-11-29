@@ -14,7 +14,7 @@ $ cd MBTA_App
 
 Now simply type the following:
 
-$ make test
+$ make run
 
 Once the application is running, simply press the "Fetch Train Data" button located at the bottom of the application window.
 
