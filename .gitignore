@@ -14,10 +14,6 @@ src/.DS_Store
 
 *.class
 
-*.class
-
-*.class
-
 bin/GUI/Constants.class
 
 bin/GUI/MainWindowGUI$1.class
