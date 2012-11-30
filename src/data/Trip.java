@@ -38,6 +38,24 @@ public class Trip
         this.predictions.add(pred);
     }
 
+    public boolean containsPredStation(String station) {
+        for(Prediction pred : this.predictions) {
+            if(pred.getStop().equals(station)) {
+                return true;
+                }
+        }
+        return false;
+    }
+
+    public Prediction getPredByStation(String station) {
+        for(Prediction pred : this.predictions) {
+            if(pred.getStop().equals(station)) {
+                return pred;
+            }
+        }
+        return null;
+    }
+
     public String toString() {
         String s = "Trip [tripID=" + tripID + ", destination=" + destination + ", position=" + position.toString() + ", predictions=" + predictions;
         //        String preds = "";
