@@ -24,6 +24,7 @@ public final class Constants {
 	public static final Color MYRED = new Color(255,0,0);
 	public static final Color MYORANGE = new Color(230,140,0);
 	public static final String SORT_DEST_CHECKBOX_TEXT = "Sorted List";
+	public static final String PLAN_TRIP_BUTTON_TEXT = "Plan Your Trip!";
 	
 	
 	/* Help set new dimensions based on given dimensions and ratios */

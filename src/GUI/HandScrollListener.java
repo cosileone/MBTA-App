@@ -24,6 +24,11 @@ public class HandScrollListener extends MouseAdapter
     {
         this.image = image;
     }
+    
+    public void mouseEntered(MouseEvent e){
+    	image.setCursor(hndCursor);
+    	pp.setLocation(e.getPoint());
+    }
 
     public void mouseDragged(final MouseEvent e)
     {
@@ -43,7 +48,6 @@ public class HandScrollListener extends MouseAdapter
 
     public void mouseReleased(MouseEvent e)
     {
-        image.setCursor(defCursor);
         image.repaint();
     }
 }

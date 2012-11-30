@@ -83,15 +83,21 @@ public class MainWindowGUI extends JFrame {
 		setPreferredSize(getPreferredSize());
         mapScrollPane.setViewportBorder(BorderFactory.createLineBorder(Color.BLACK));
         
+        HandScrollListener scrollListener = new HandScrollListener(map);
+        mapScrollPane.getViewport().addMouseMotionListener(scrollListener);
+        mapScrollPane.getViewport().addMouseListener(scrollListener);
+        
 		mapRegion.add(mapScrollPane, BorderLayout.CENTER);
 		
 		/* Destination List Components */
-		JPanel destinationList = new JPanel();
+		JPanel destinationList = new JPanel(new BorderLayout());
 		destinationList.setBackground(Color.WHITE);
 		destinationList.setBorder(BorderFactory.createEtchedBorder());
 		Dimension size = getPreferredSize();
 		size.width = (int)(GUI_DIMENSIONS.width/5);
 		destinationList.setPreferredSize(size);
+		JButton planTrip = new JButton(PLAN_TRIP_BUTTON_TEXT);
+		destinationList.add(planTrip, BorderLayout.SOUTH);
 		
 		mapPanel.add(mapRegion, BorderLayout.CENTER);
 		mapPanel.add(destinationList, BorderLayout.EAST);
