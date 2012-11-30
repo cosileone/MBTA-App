@@ -31,6 +31,12 @@ public class TripList
         this.trips.add(t);
     }
 
+    public void append(TripList tl) {
+        for(Trip t : tl.getTrips()) {
+            this.addTrip(t);
+        }
+    }
+
     @Override
     public String toString() {
         String s = "TripList [currentTime=" + currentTime + ", line=" + line + ", trips=" + trips;
