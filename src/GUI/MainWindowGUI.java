@@ -29,7 +29,7 @@ public class MainWindowGUI extends JFrame {
 		JPanel itinTabContents = makeItinTab();
 		
 		tabs.addTab(MAP_TITLE, null, mapTabContents, MAP_TOOLTIP);
-		tabs.addTab(ITINERARY_TITLE, null, itinTabContents, ITINERARY_TOOLTIP);
+		tabs.addTab(ITINERARY_TITLE+" ", null, itinTabContents, ITINERARY_TOOLTIP);
 		window.add(tabs, BorderLayout.CENTER);
 		
 		window.validate();
@@ -42,7 +42,6 @@ public class MainWindowGUI extends JFrame {
 		/* ---- Cyan wrapper ---- */
 		JPanel mapPanel = new JPanel(new BorderLayout());
 		mapPanel.setBackground(Color.CYAN);
-		mapPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		
 		/* ---- North Section of wrapper ---- */		
 		JPanel northPanel = new JPanel();
@@ -77,7 +76,7 @@ public class MainWindowGUI extends JFrame {
 		
 		/* Map Region Components */
 		JPanel mapRegion = new JPanel(new BorderLayout());
-		ImageIcon mapImage = new ImageIcon("Resources/Images/custom-mbta-map.png");
+		ImageIcon mapImage = new ImageIcon(MAP_FILEPATH);
 		JLabel map = new JLabel(mapImage);
 		JScrollPane mapScrollPane = new JScrollPane(map);
 		setPreferredSize(getPreferredSize());
@@ -101,6 +100,7 @@ public class MainWindowGUI extends JFrame {
 		
 		mapPanel.add(mapRegion, BorderLayout.CENTER);
 		mapPanel.add(destinationList, BorderLayout.EAST);
+		/* ---- End Cyan wrapper ---- */
 		
 		return mapPanel;
 	}

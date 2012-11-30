@@ -7,7 +7,8 @@ public final class Constants {
 	public static final Dimension SCREENSIZE = Toolkit.getDefaultToolkit().getScreenSize();
 	public static final Dimension GUI_DIMENSIONS = setGUIDimensions();
 	public static final String APP_TITLE = "MBTA Travel Application";
-	/* Layout for components */
+	/* Resources */
+	public static final String MAP_FILEPATH = "Resources/Images/custom-mbta-map.png";
 	/* Tab Titles and Tooltip Strings */
 	public static final String MAP_TITLE = "Geo Map";
 	public static final String MAP_TOOLTIP = "Switch to MAP view to see a GEO-MAP and enter destinations to plan your trip.";
@@ -25,6 +26,7 @@ public final class Constants {
 	public static final Color MYORANGE = new Color(230,140,0);
 	public static final String SORT_DEST_CHECKBOX_TEXT = "Sorted List";
 	public static final String PLAN_TRIP_BUTTON_TEXT = "Plan Your Trip!";
+	/* Itinerary View Components */
 	
 	
 	/* Help set new dimensions based on given dimensions and ratios */
