@@ -26,8 +26,11 @@ public final class Constants {
 	public static final String SORT_DEST_CHECKBOX_TEXT = "Sorted List";
 	
 	
-	
-	
+	/* Help set new dimensions based on given dimensions and ratios */
+	public static final Dimension setRelativeToXwithRatios(Dimension original, double widthRatio, double heightRatio) {
+		Dimension temp = new Dimension((int) (original.width*widthRatio), (int) (original.height*heightRatio));
+		return temp;
+	}
 	
 	/* Help set correct GUI window dimensions based on total screen size */
 	public static final Dimension setGUIDimensions() {
@@ -37,4 +40,5 @@ public final class Constants {
 		
 		return temp;
 	}
+	
 }

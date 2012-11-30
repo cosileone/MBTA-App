@@ -2,13 +2,11 @@ package GUI;
 
 import static GUI.Constants.*;
 import java.awt.*;
-import java.io.IOException;
-import java.net.URL;
-import java.util.Scanner;
 
 import javax.swing.*;
 //Test Guest Commit
 public class MainWindowGUI extends JFrame {
+	Dimension parentDims;
 	
 	public MainWindowGUI(){
 		initComponents();
@@ -18,10 +16,12 @@ public class MainWindowGUI extends JFrame {
 		/* Setup bare window */
 		JFrame window = new JFrame(APP_TITLE);
 		window.setLayout(new BorderLayout());
-		window.setVisible(true);
+
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setSize(GUI_DIMENSIONS);
 		window.setPreferredSize(GUI_DIMENSIONS);
+		
+		parentDims = window.getSize();
 		
 		/* Start Adding components to window */
 		JTabbedPane tabs = new JTabbedPane();
@@ -32,22 +32,21 @@ public class MainWindowGUI extends JFrame {
 		tabs.addTab(ITINERARY_TITLE, null, itinTabContents, ITINERARY_TOOLTIP);
 		window.add(tabs, BorderLayout.CENTER);
 		
+		window.validate();
 		window.pack();
+		window.setVisible(true);
 	}
 	
 	protected JPanel makeMapTab(){
-//		GridBagConstraints c = new GridBagConstraints();
 		
-		/* * * Cyan wrapper * * */
-		JPanel mapPanel = new JPanel();
+		/* ---- Cyan wrapper ---- */
+		JPanel mapPanel = new JPanel(new BorderLayout());
 		mapPanel.setBackground(Color.CYAN);
 		mapPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 		
-		/* ---- North Section of wrapper ---- */
-		GridBagConstraints nGBC = new GridBagConstraints();
-		
-		JPanel northPanel = new JPanel(new FlowLayout());
-		northPanel.setBackground(Color.LIGHT_GRAY);
+		/* ---- North Section of wrapper ---- */		
+		JPanel northPanel = new JPanel();
+		northPanel.setBorder(BorderFactory.createEtchedBorder());
 		
 		/* Text input components */
 		GhostTextField inputField = new GhostTextField(INPUT_FIELD_FILLER, 20);
@@ -65,53 +64,43 @@ public class MainWindowGUI extends JFrame {
 		
 		JCheckBox sortedCheckbox = new JCheckBox(SORT_DEST_CHECKBOX_TEXT);
 		
-		northPanel.add(inputField, nGBC);
-		nGBC.gridx = 1;
-		northPanel.add(submitDestination, nGBC);
-		nGBC.gridx = 2;
-		northPanel.add(dropdownLabel, nGBC);
-		nGBC.gridx = 3;
-		northPanel.add(blueDropdown, nGBC);
-		nGBC.gridx = 4;
-		northPanel.add(redDropdown, nGBC);
-		nGBC.gridx = 5;
-		northPanel.add(orangeDropdown, nGBC);
-		nGBC.gridx = 6;
-		northPanel.add(sortedCheckbox, nGBC);
+		northPanel.add(inputField);
+		northPanel.add(submitDestination);
+		northPanel.add(dropdownLabel);
+		northPanel.add(blueDropdown);
+		northPanel.add(redDropdown);
+		northPanel.add(orangeDropdown);
+		northPanel.add(sortedCheckbox);
 		
-		mapPanel.add(northPanel, BorderLayout.NORTH);
+		mapPanel.add(northPanel, BorderLayout.PAGE_START);
 		/* ---- End North Section ---- */
 		
-		/* Destination List Components */
-		JPanel destinationList = new JPanel(new GridBagLayout());
-		destinationList.setBackground(Color.WHITE);
-		
 		/* Map Region Components */
-		JPanel mapRegion = new JPanel();
-//		mapRegion.setPreferredSize();
-		mapRegion.setBackground(Color.BLACK);
+		JPanel mapRegion = new JPanel(new BorderLayout());
+		ImageIcon mapImage = new ImageIcon("Resources/Images/custom-mbta-map.png");
+		JLabel map = new JLabel(mapImage);
+		JScrollPane mapScrollPane = new JScrollPane(map);
+		setPreferredSize(getPreferredSize());
+        mapScrollPane.setViewportBorder(BorderFactory.createLineBorder(Color.BLACK));
+        
+		mapRegion.add(mapScrollPane, BorderLayout.CENTER);
 		
-//		/* Start adding components to the Panel */
-//		c.weightx = 1;
-//		c.weighty = 1;
-//		c.gridx = 0;
-//		c.gridy = 0;
-//		//cut items
-//		// ...
-//		//end cut
-//		c.gridy = 1;
-//		c.gridx = 0;
-//		c.gridwidth = 6; // 6 Components in location entry region
-//		c.fill = GridBagConstraints.BOTH;
-//		mapPanel.add(mapRegion, c);
+		/* Destination List Components */
+		JPanel destinationList = new JPanel();
+		destinationList.setBackground(Color.WHITE);
+		destinationList.setBorder(BorderFactory.createEtchedBorder());
+		Dimension size = getPreferredSize();
+		size.width = (int)(GUI_DIMENSIONS.width/5);
+		destinationList.setPreferredSize(size);
 		
+		mapPanel.add(mapRegion, BorderLayout.CENTER);
+		mapPanel.add(destinationList, BorderLayout.EAST);
 		
 		return mapPanel;
 	}
 	
 	protected JPanel makeItinTab(){
-		GridBagConstraints c = new GridBagConstraints();
-		JPanel initPanel = new JPanel(new GridBagLayout(), true);
+		JPanel initPanel = new JPanel();
 		return initPanel;
 	}
 	
