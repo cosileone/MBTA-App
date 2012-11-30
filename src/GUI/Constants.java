@@ -8,14 +8,22 @@ public final class Constants {
 	public static final Dimension GUI_DIMENSIONS = setGUIDimensions();
 	public static final String APP_TITLE = "MBTA Travel Application";
 	/* Layout for components */
-	public static final GridBagLayout GRID_BAG_LAYOUT = new GridBagLayout();
 	/* Tab Titles and Tooltip Strings */
 	public static final String MAP_TITLE = "Geo Map";
 	public static final String MAP_TOOLTIP = "Switch to MAP view to see a GEO-MAP and enter destinations to plan your trip.";
 	public static final String ITINERARY_TITLE = "Itinerary";
 	public static final String ITINERARY_TOOLTIP = "Switch to ITINERARY view to see a LINEAR-MAP and written directions to get to your destination.";
 	/* Map Tab Components */
+	public static final Color GRAY_TEXT_COLOR = new Color(128,128,128);
 	public static final String INPUT_FIELD_FILLER = "Please enter a location.";
+	public static final String SUBMIT_DESTINATION_TEXT = "Add";
+	public static final String DROPDOWN_LABEL_TEXT = "Or choose from a list:";
+	public static final String[] BLUE_STATIONS = {"Wonderland", "Revere Beach", "Beachmont", "Suffolk Downs", "Orient Heights", "Wood Island", "Airport", "Maverick", "Boston Harbor", "Aquarium", "State", "Government Center", "Bowdoin"};
+	public static final String[] RED_STATIONS = {"Alewife", "Davis", "Porter", "Harvard", "Central", "Kendall/MIT", "Charles/MGH", "Park Street", "Downtown Crossing", "South Station", "Broadway", "Andrew", "JFK/UMass", "Savin Hill", "Fields Corner", "Shawmut", "Ashmont", "Cedar Grove", "Butler", "Milton", "Central Avenue", "Valley Road", "Capen Street", "Mattapan", "North Quincy", "Wollaston", "Quincy Center", "Quincy Adams", "Braintree"};
+	public static final String[] ORANGE_STATIONS = {"Oak Grove", "Malden Center", "Wellington", "Sullivan Square", "Community College", "North Station", "Haymarket", "State", "Downtown Crossing", "Chinatown", "Tufts Medical Center", "Back Bay", "Mass Ave", "Ruggles", "Roxbury Crossing", "Jackson Square", "Stony Brook", "Green Street", "Forest Hills"};
+	public static final Color MYRED = new Color(255,0,0);
+	public static final Color MYORANGE = new Color(230,140,0);
+	public static final String SORT_DEST_CHECKBOX_TEXT = "Sorted List";
 	
 	
 	

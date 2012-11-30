@@ -24,7 +24,7 @@ public class JsonTest
 
         try {
 
-            BufferedReader fileReader = new BufferedReader(new FileReader("Resources/Test Files/TestBlue_2012_10_19.json"));
+            BufferedReader fileReader = new BufferedReader(new FileReader("Resources/Test Files/TestOrange_2012_10_19.json"));
             JsonNode rootNode = mapper.readTree(fileReader);
 
             // IMPORTANT
