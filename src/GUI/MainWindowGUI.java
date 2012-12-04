@@ -8,7 +8,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-//Test Guest Commit
 public class MainWindowGUI extends JFrame {
 	Path journey = new Path();
 	
@@ -192,6 +191,7 @@ public class MainWindowGUI extends JFrame {
 				journey.getTrip().remove(button.getText());
 				parent.remove(button);
 				parent.repaint();
+				parent.revalidate();
 			}
 		};
 		
