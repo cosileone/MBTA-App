@@ -1,7 +1,8 @@
 package GUI;
 
 /* *
- * http://stackoverflow.com/questions/10243257/java-scroll-image-by-mouse-dragging
+ * Original code from: 	http://stackoverflow.com/questions/10243257/java-scroll-image-by-mouse-dragging
+ * Modifications by: 	Cosimo Leone
  * */
 
 import java.awt.Cursor;
@@ -16,7 +17,7 @@ import javax.swing.JViewport;
 public class HandScrollListener extends MouseAdapter
 {
     private final Cursor defCursor = Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR);
-    private final Cursor hndCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
+    private final Cursor handCursor = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
     private final Point pp = new Point();
     private JLabel image;
 
@@ -26,7 +27,7 @@ public class HandScrollListener extends MouseAdapter
     }
     
     public void mouseEntered(MouseEvent e){
-    	image.setCursor(hndCursor);
+    	image.setCursor(handCursor);
     	pp.setLocation(e.getPoint());
     }
 
@@ -42,7 +43,7 @@ public class HandScrollListener extends MouseAdapter
 
     public void mousePressed(MouseEvent e)
     {
-        image.setCursor(hndCursor);
+        image.setCursor(handCursor);
         pp.setLocation(e.getPoint());
     }
 

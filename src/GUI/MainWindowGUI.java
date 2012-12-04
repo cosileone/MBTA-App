@@ -1,12 +1,17 @@
 package GUI;
 
 import static GUI.Constants.*;
+import static data.Path.*;
+import data.Path;
 import java.awt.*;
+import java.awt.event.*;
 
 import javax.swing.*;
+
+
 //Test Guest Commit
 public class MainWindowGUI extends JFrame {
-	Dimension parentDims;
+	Path journey = new Path();
 	
 	public MainWindowGUI(){
 		initComponents();
@@ -20,8 +25,6 @@ public class MainWindowGUI extends JFrame {
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setSize(GUI_DIMENSIONS);
 		window.setPreferredSize(GUI_DIMENSIONS);
-		
-		parentDims = window.getSize();
 		
 		/* Start Adding components to window */
 		JTabbedPane tabs = new JTabbedPane();
@@ -40,7 +43,6 @@ public class MainWindowGUI extends JFrame {
 	}
 	
 	protected JPanel makeMapTab(){
-		
 		/* ---- Cyan wrapper ---- */
 		JPanel mapPanel = new JPanel(new BorderLayout());
 		mapPanel.setBackground(Color.CYAN);
@@ -49,25 +51,54 @@ public class MainWindowGUI extends JFrame {
 		JPanel northPanel = new JPanel();
 		northPanel.setBorder(BorderFactory.createEtchedBorder());
 		
+		//destinationList is actually part of Destination List Components
+		JPanel destinationList = new JPanel();
+		
 		/* Text input components */
-		GhostTextField inputField = new GhostTextField(INPUT_FIELD_FILLER, 20);
+		final GhostTextField inputField = new GhostTextField(INPUT_FIELD_FILLER, 20);
 		inputField.setForeground(GRAY_TEXT_COLOR);
 		JButton submitDestination = new JButton(SUBMIT_DESTINATION_TEXT);
 		
+		/* listener for the input field */
+		ActionListener inputFieldListener = new DestinationEavesdropper(destinationList) {
+			public void actionPerformed(ActionEvent ae) {
+				String entry = inputField.getText();
+				addToJourney(entry);
+				System.out.println("Putting \""+ inputField.getText() + "\" into journey list.");
+				refreshDestinationList(this.destinationPanel);
+			}
+		};
+		inputField.addActionListener(inputFieldListener);
+		submitDestination.addActionListener(inputFieldListener);
+		
 		/* Dropdown components */
+		/* Reusable listener for multiple components */
+		ActionListener comboBoxListener = new DestinationEavesdropper(destinationList) {
+			public void actionPerformed(ActionEvent ae) {
+				JComboBox box = (JComboBox) ae.getSource();
+				String entry = (String) box.getItemAt(box.getSelectedIndex());
+				addToJourney(entry);
+				System.out.println("Putting \""+ entry + "\" into journey list.");
+				refreshDestinationList(this.destinationPanel);
+			}
+		};
+		
 		JLabel dropdownLabel = new JLabel(DROPDOWN_LABEL_TEXT);
 		
 		JComboBox blueDropdown = new JComboBox(BLUE_STATIONS);
 		blueDropdown.setForeground(Color.BLUE);
 		blueDropdown.setMaximumRowCount(10);
+		blueDropdown.addActionListener(comboBoxListener);
 		
 		JComboBox redDropdown = new JComboBox(RED_STATIONS);
 		redDropdown.setForeground(MYRED);
 		redDropdown.setMaximumRowCount(15);
+		redDropdown.addActionListener(comboBoxListener);
 		
 		JComboBox orangeDropdown = new JComboBox(ORANGE_STATIONS);
 		orangeDropdown.setForeground(MYORANGE);
 		orangeDropdown.setMaximumRowCount(15);
+		orangeDropdown.addActionListener(comboBoxListener);
 		
 		JCheckBox sortedCheckbox = new JCheckBox(SORT_DEST_CHECKBOX_TEXT);
 		
@@ -87,7 +118,6 @@ public class MainWindowGUI extends JFrame {
 		ImageIcon mapImage = new ImageIcon(MAP_FILEPATH);
 		JLabel map = new JLabel(mapImage);
 		JScrollPane mapScrollPane = new JScrollPane(map);
-		//setPreferredSize(getPreferredSize());
         mapScrollPane.setViewportBorder(BorderFactory.createLineBorder(Color.BLACK));
         
         HandScrollListener scrollListener = new HandScrollListener(map);
@@ -97,30 +127,69 @@ public class MainWindowGUI extends JFrame {
 		mapRegion.add(mapScrollPane, BorderLayout.CENTER);
 		
 		/* Destination List Components */
-		JPanel destinationList = new JPanel(new BorderLayout());
-		destinationList.setBackground(Color.WHITE);
-		destinationList.setBorder(BorderFactory.createEtchedBorder());
+		JPanel destinationPane = new JPanel(new BorderLayout());
+		destinationPane.setBackground(Color.WHITE);
+		destinationPane.setBorder(BorderFactory.createEtchedBorder());
 		Dimension size = getPreferredSize();
 		size.width = (int)(GUI_DIMENSIONS.width/5);
-		destinationList.setPreferredSize(size);
+		destinationPane.setPreferredSize(size);
+		//Only print destinations on button press for now
 		JButton planTrip = new JButton(PLAN_TRIP_BUTTON_TEXT);
-		destinationList.add(planTrip, BorderLayout.SOUTH);
+		planTrip.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				System.out.println(journey.toString());
+			}
+		});
+		
+		destinationList.setBackground(Color.WHITE);
+		destinationList.setLayout(new BoxLayout(destinationList, BoxLayout.Y_AXIS));
+		
+		destinationPane.add(destinationList, BorderLayout.CENTER);
+		destinationPane.add(planTrip, BorderLayout.PAGE_END);
 		
 		mapPanel.add(mapRegion, BorderLayout.CENTER);
-		mapPanel.add(destinationList, BorderLayout.EAST);
+		mapPanel.add(destinationPane, BorderLayout.EAST);
 		/* ---- End Cyan wrapper ---- */
 		
 		return mapPanel;
 	}
 	
-	protected JPanel makeItinTab(){
+	private JPanel makeItinTab(){
+		/* Wrapper for Itinerary Tab */
+		JPanel itineraryPanel = new JPanel(new BorderLayout());
+		JPanel linearMapRegion = new JPanel();
+		linearMapRegion.setBackground(Color.CYAN);
+		JTextArea instructions = new JTextArea(ITINERARY_FILLER);
+		instructions.setEditable(NOEDIT_INSTRUCTIONS);
+		
+		itineraryPanel.add(linearMapRegion, BorderLayout.LINE_START);
+		itineraryPanel.add(instructions, BorderLayout.CENTER);
+		
+		return itineraryPanel;
+	}
+	
+	private JPanel makeTestTab(){
 		JPanel initPanel = new JPanel();
 		return initPanel;
 	}
 	
-	protected JPanel makeTestTab(){
-		JPanel initPanel = new JPanel();
-		return initPanel;
+	private void addToJourney(String entry){
+		if (journey.getTrip().contains(entry) || entry.compareTo("") == 0){
+			//don't add
+		}
+		else {
+			journey.addToTrip(entry);
+		}
+	}
+	
+	private void refreshDestinationList(JPanel dest){
+		dest.removeAll();
+		for (String s : journey.getTrip()){
+			JButton tempButton = new JButton(s);
+			tempButton.setSize(DESTINATION_LIST_BUTTON_SIZE);
+			dest.add(tempButton);
+		}
+		dest.revalidate();
 	}
 	
 	public static void main(String[] args) {

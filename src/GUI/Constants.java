@@ -25,8 +25,11 @@ public final class Constants {
 	public static final Color MYRED = new Color(255,0,0);
 	public static final Color MYORANGE = new Color(230,140,0);
 	public static final String SORT_DEST_CHECKBOX_TEXT = "Sorted List";
+	public static final Dimension DESTINATION_LIST_BUTTON_SIZE = new Dimension(0,50);
 	public static final String PLAN_TRIP_BUTTON_TEXT = "Plan Your Trip!";
 	/* Itinerary View Components */
+	public static final String ITINERARY_FILLER = "Your trip's written instructions will be shown here.";
+	public static final boolean NOEDIT_INSTRUCTIONS = false;
 	/* Test View Components */
 	public static final String TEST_TAB_TITLE = "Custom";
 	public static final String TEST_TAB_TOOLTIP = "Choose and upload custom train data.";

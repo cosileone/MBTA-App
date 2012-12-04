@@ -30,10 +30,11 @@ public class GhostTextField extends JTextField implements FocusListener, ActionL
 
     @Override
     public void focusGained(FocusEvent e) {
+    	super.setText("");
     	this.setForeground(Color.BLACK);
-        if(this.getText().isEmpty()) {
-            super.setText("");
-        }
+//        if(this.getText().isEmpty()) {
+//            super.setText("");
+//        }
     }
     
     @Override
@@ -53,10 +54,10 @@ public class GhostTextField extends JTextField implements FocusListener, ActionL
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(this.getText().isEmpty()) {
-			System.out.println("Pressed Enter");
+			System.out.println("[Enter]");
 		}
 		else {
-			System.out.println(this.getText());
+			System.out.println(this.getText()+"[Enter]");
 		}
 		this.setText("");
 	}
