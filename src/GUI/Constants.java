@@ -16,7 +16,7 @@ public final class Constants {
 	public static final String ITINERARY_TOOLTIP = "Switch to ITINERARY view to see a LINEAR-MAP and written directions to get to your destination.";
 	/* Map Tab Components */
 	public static final Color GRAY_TEXT_COLOR = new Color(128,128,128);
-	public static final String INPUT_FIELD_FILLER = "Please enter a location.";
+	public static final String INPUT_FIELD_FILLER = "Please enter a location";
 	public static final String SUBMIT_DESTINATION_TEXT = "Add";
 	public static final String DROPDOWN_LABEL_TEXT = "Or choose from a list:";
 	public static final String[] BLUE_STATIONS = {"Wonderland", "Revere Beach", "Beachmont", "Suffolk Downs", "Orient Heights", "Wood Island", "Airport", "Maverick", "Boston Harbor", "Aquarium", "State", "Government Center", "Bowdoin"};
@@ -27,6 +27,9 @@ public final class Constants {
 	public static final String SORT_DEST_CHECKBOX_TEXT = "Sorted List";
 	public static final String PLAN_TRIP_BUTTON_TEXT = "Plan Your Trip!";
 	/* Itinerary View Components */
+	/* Test View Components */
+	public static final String TEST_TAB_TITLE = "Custom";
+	public static final String TEST_TAB_TOOLTIP = "Choose and upload custom train data.";
 	
 	
 	/* Help set new dimensions based on given dimensions and ratios */
@@ -38,8 +41,8 @@ public final class Constants {
 	/* Help set correct GUI window dimensions based on total screen size */
 	public static final Dimension setGUIDimensions() {
 		Dimension temp = SCREENSIZE;
-		temp.width = (int) ((temp.width >= 1024) ? temp.width*.65 : 800);
-		temp.height = (int) ((temp.height >= 800) ? temp.height*.75 : 600);
+		temp.width = (int) ((temp.width*.65 >= 1024) ? temp.width*.65 : 800);
+		temp.height = (int) ((temp.height*.75 >= 800) ? temp.height*.75 : 600);
 		
 		return temp;
 	}

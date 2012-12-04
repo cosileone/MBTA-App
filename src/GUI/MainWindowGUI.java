@@ -27,9 +27,11 @@ public class MainWindowGUI extends JFrame {
 		JTabbedPane tabs = new JTabbedPane();
 		JPanel mapTabContents = makeMapTab();
 		JPanel itinTabContents = makeItinTab();
+		JPanel testTabContents = makeTestTab();
 		
 		tabs.addTab(MAP_TITLE, null, mapTabContents, MAP_TOOLTIP);
-		tabs.addTab(ITINERARY_TITLE+" ", null, itinTabContents, ITINERARY_TOOLTIP);
+		tabs.addTab(ITINERARY_TITLE, null, itinTabContents, ITINERARY_TOOLTIP);
+		tabs.addTab(TEST_TAB_TITLE+" ", null, testTabContents, TEST_TAB_TOOLTIP);
 		window.add(tabs, BorderLayout.CENTER);
 		
 		window.validate();
@@ -54,12 +56,18 @@ public class MainWindowGUI extends JFrame {
 		
 		/* Dropdown components */
 		JLabel dropdownLabel = new JLabel(DROPDOWN_LABEL_TEXT);
+		
 		JComboBox blueDropdown = new JComboBox(BLUE_STATIONS);
 		blueDropdown.setForeground(Color.BLUE);
+		blueDropdown.setMaximumRowCount(10);
+		
 		JComboBox redDropdown = new JComboBox(RED_STATIONS);
 		redDropdown.setForeground(MYRED);
+		redDropdown.setMaximumRowCount(15);
+		
 		JComboBox orangeDropdown = new JComboBox(ORANGE_STATIONS);
 		orangeDropdown.setForeground(MYORANGE);
+		orangeDropdown.setMaximumRowCount(15);
 		
 		JCheckBox sortedCheckbox = new JCheckBox(SORT_DEST_CHECKBOX_TEXT);
 		
@@ -79,7 +87,7 @@ public class MainWindowGUI extends JFrame {
 		ImageIcon mapImage = new ImageIcon(MAP_FILEPATH);
 		JLabel map = new JLabel(mapImage);
 		JScrollPane mapScrollPane = new JScrollPane(map);
-		setPreferredSize(getPreferredSize());
+		//setPreferredSize(getPreferredSize());
         mapScrollPane.setViewportBorder(BorderFactory.createLineBorder(Color.BLACK));
         
         HandScrollListener scrollListener = new HandScrollListener(map);
@@ -106,6 +114,11 @@ public class MainWindowGUI extends JFrame {
 	}
 	
 	protected JPanel makeItinTab(){
+		JPanel initPanel = new JPanel();
+		return initPanel;
+	}
+	
+	protected JPanel makeTestTab(){
 		JPanel initPanel = new JPanel();
 		return initPanel;
 	}
