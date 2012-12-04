@@ -8,7 +8,11 @@ public class Path {
     private int pathTime = 10000000;
     private List<String> trip = new ArrayList<String>();
 
+<<<<<<< HEAD
     public Path(){}
+=======
+    Path(){}
+>>>>>>> 21f57a69474641f3d2c6f48a3e4e9fbb3b3a966e
 
     public int getPathTime() {
         return this.pathTime;
