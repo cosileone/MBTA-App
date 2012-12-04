@@ -32,9 +32,6 @@ public class GhostTextField extends JTextField implements FocusListener, ActionL
     public void focusGained(FocusEvent e) {
     	super.setText("");
     	this.setForeground(Color.BLACK);
-//        if(this.getText().isEmpty()) {
-//            super.setText("");
-//        }
     }
     
     @Override

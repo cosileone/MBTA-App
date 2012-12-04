@@ -1,7 +1,6 @@
 package GUI;
 
 import static GUI.Constants.*;
-import static data.Path.*;
 import data.Path;
 import java.awt.*;
 import java.awt.event.*;
@@ -184,11 +183,26 @@ public class MainWindowGUI extends JFrame {
 	
 	private void refreshDestinationList(JPanel dest){
 		dest.removeAll();
+		
+		// Unique action listener allows a button to remove itself from list of destinations
+		ActionListener button_removeSelf = new ActionListener(){
+			public void actionPerformed(ActionEvent ae) {
+				JButton button = (JButton) ae.getSource();
+				JPanel parent = (JPanel) button.getParent();
+				journey.getTrip().remove(button.getText());
+				parent.remove(button);
+				parent.repaint();
+			}
+		};
+		
+		// for every string in our Path structure's list of destinations, make a button
 		for (String s : journey.getTrip()){
 			JButton tempButton = new JButton(s);
 			tempButton.setSize(DESTINATION_LIST_BUTTON_SIZE);
+			tempButton.addActionListener(button_removeSelf);
 			dest.add(tempButton);
 		}
+		
 		dest.revalidate();
 	}
 	
