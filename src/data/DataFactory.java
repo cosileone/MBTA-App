@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+//marked for deletion because this was from 1st iteration of APP
 public class DataFactory {
 	String redText;
 	String orangeText;
