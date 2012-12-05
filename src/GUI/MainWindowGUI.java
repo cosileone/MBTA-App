@@ -42,7 +42,7 @@ public class MainWindowGUI extends JFrame {
 	
 	protected JPanel makeMapTab(){
 		/* ---- Cyan wrapper ---- */
-		JPanel mapPanel = new JPanel(new BorderLayout());
+		final JPanel mapPanel = new JPanel(new BorderLayout());
 		mapPanel.setBackground(Color.CYAN);
 		
 		/* ---- North Section of wrapper ---- */		
@@ -125,6 +125,7 @@ public class MainWindowGUI extends JFrame {
 		mapRegion.add(mapScrollPane, BorderLayout.CENTER);
 		
 		/* Destination List Components */
+		JScrollPane scrollableDestinations = new JScrollPane(destinationList);
 		JPanel destinationPane = new JPanel(new BorderLayout());
 		destinationPane.setBackground(Color.WHITE);
 		destinationPane.setBorder(BorderFactory.createEtchedBorder());
@@ -135,6 +136,10 @@ public class MainWindowGUI extends JFrame {
 		JButton planTrip = new JButton(PLAN_TRIP_BUTTON_TEXT);
 		planTrip.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				JTabbedPane tabs = (JTabbedPane) mapPanel.getParent();
+				if(validJourney()){
+					tabs.setSelectedIndex(1);
+				}
 				System.out.println(journey.toString());
 			}
 		});
@@ -142,7 +147,7 @@ public class MainWindowGUI extends JFrame {
 		destinationList.setBackground(Color.WHITE);
 		destinationList.setLayout(new BoxLayout(destinationList, BoxLayout.Y_AXIS));
 		
-		destinationPane.add(destinationList, BorderLayout.CENTER);
+		destinationPane.add(scrollableDestinations, BorderLayout.CENTER);
 		destinationPane.add(planTrip, BorderLayout.PAGE_END);
 		
 		mapPanel.add(mapRegion, BorderLayout.CENTER);
@@ -155,13 +160,18 @@ public class MainWindowGUI extends JFrame {
 	private JPanel makeItinTab(){
 		/* Wrapper for Itinerary Tab */
 		JPanel itineraryPanel = new JPanel(new BorderLayout());
-		JPanel linearMapRegion = new JPanel();
+		JPanel linearMapRegion = new JPanel(new BorderLayout());
+		
+		LinearMap linearMap = new LinearMap();
+		
 		linearMapRegion.setBackground(Color.CYAN);
+		linearMapRegion.add(linearMap);
+		
 		JTextArea instructions = new JTextArea(ITINERARY_FILLER);
 		instructions.setEditable(NOEDIT_INSTRUCTIONS);
 		
-		itineraryPanel.add(linearMapRegion, BorderLayout.LINE_START);
-		itineraryPanel.add(instructions, BorderLayout.CENTER);
+		itineraryPanel.add(linearMapRegion, BorderLayout.CENTER);
+		itineraryPanel.add(instructions, BorderLayout.LINE_END);
 		
 		return itineraryPanel;
 	}
@@ -190,6 +200,7 @@ public class MainWindowGUI extends JFrame {
 				JPanel parent = (JPanel) button.getParent();
 				journey.getTrip().remove(button.getText());
 				parent.remove(button);
+				
 				parent.repaint();
 				parent.revalidate();
 			}
@@ -204,6 +215,15 @@ public class MainWindowGUI extends JFrame {
 		}
 		
 		dest.revalidate();
+	}
+	
+	private boolean validJourney(){
+		if(journey.getTrip().isEmpty()){
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 	
 	public static void main(String[] args) {
