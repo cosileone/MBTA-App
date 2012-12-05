@@ -229,7 +229,7 @@ public class JsonTest
             */
             
             System.out.println("LARGE_INT EVERYONE=" + largeInt);
-            Pathway<TrainConnection> ag = g.depthFirstSearch(airport, aquarium, currentTime, currentTime, largeInt);
+            Pathway<TrainConnection> ag = g.depthFirstSearch(airport, aquarium, currentTime, currentTime, largeInt, false);
             Pathway<TrainConnection> ag2 = fastestPathWithNoContraints(airport, aquarium);
             System.out.println("+++++++++++++++++++++++++++++ RESULT 1 +++++++++++++++++++++++++++++");
             System.out.println(ag.toString());
@@ -458,7 +458,7 @@ public class JsonTest
     }
 
     
-    private static Pathway<TrainConnection> fastestPath(Station start, Station end, int currentTime, int departByTime, int arriveByTime) {
+    private static Pathway<TrainConnection> fastestPath(Station start, Station end, int currentTime, int departByTime, int arriveByTime, boolean withFewestTransfers) {
         String testBlue = "Resources/Test Files/TestBlue_2012_10_19.json";
         String testOrange = "Resources/Test Files/TestOrange_2012_10_19.json";
         String testRed = "Resources/Test Files/TestRed_2012_10_19.json";
@@ -487,42 +487,110 @@ public class JsonTest
     	Graph g = new Graph();
         tripListToGraph(tripl, g);
         
-        return g.depthFirstSearch(start, end, currentTime, departByTime, arriveByTime);
+        return g.depthFirstSearch(start, end, currentTime, departByTime, arriveByTime, withFewestTransfers);
     }
     
     public static Pathway<TrainConnection> fastestPathWithDepart(Station start, Station end, int departByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
     	int inf = (int) Double.POSITIVE_INFINITY;
 
-    	return JsonTest.fastestPath(start, end, timeNow, departByTime, inf);
+    	return JsonTest.fastestPath(start, end, timeNow, departByTime, inf, false);
     }
     public static Pathway<TrainConnection> fastestPathWithNoContraints(Station start, Station end) {
     	int timeNow = JsonTest.getCurrentEpochTime();
     	int inf = (int) Double.POSITIVE_INFINITY;
 
-    	return JsonTest.fastestPath(start, end, timeNow, 0, inf);
+    	return JsonTest.fastestPath(start, end, timeNow, 0, inf, false);
     }
     public static Pathway<TrainConnection> fastestPathWithDepartArrive(Station start, Station end, int departByTime, int arriveByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
 
-    	return JsonTest.fastestPath(start, end, timeNow, departByTime, arriveByTime);
+    	return JsonTest.fastestPath(start, end, timeNow, departByTime, arriveByTime, false);
     }
     public static Pathway<TrainConnection> fastestPathWithArrive(Station start, Station end, int arriveByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
 
-    	return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime);
+    	return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, false);
     }
-    /*
-    public static Pathway<TrainConnection> fastestSortedPath(ArrayList<String> arrs, int departByTime, int arriveByTime) {
+    public static Pathway<TrainConnection> fastestPathWithArriveFewestTransfers(Station start, Station end,int arriveByTime) {
+    	int timeNow = JsonTest.getCurrentEpochTime();
+    	
+    	return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, true);
+    }
+    public static Pathway<TrainConnection> 
+    				fastestPathWithDepartArriveFewestTransfers(
+    										Station start, Station end, 
+    										int departBy, int arriveByTime) {
+    	int timeNow = JsonTest.getCurrentEpochTime();
+
+    	//return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, true);
+    	return null;																	/// FIXME
+    }
+    public static Pathway<TrainConnection> fastestPathWithDepartFewestTransfers(Station start,Station end, int departByTime) {
+    	int timeNow = JsonTest.getCurrentEpochTime();
+    	int inf = (int) Double.POSITIVE_INFINITY;
+    	
+    	return JsonTest.fastestPath(start, end, timeNow, departByTime, inf, true);
+    }
+    public static Pathway<TrainConnection> fastestPathWithFewestTransfers(Station start, Station end) {
+       	int timeNow = JsonTest.getCurrentEpochTime();
+    	int inf = (int) Double.POSITIVE_INFINITY;
+    	
+    	return JsonTest.fastestPath(start, end, timeNow, timeNow, inf, true);
+    }
+    
+    private static Pathway<TrainConnection> fastestSortedPath(ArrayList<Station> arrs, 
+    					boolean shouldDepartBy, int departByTime, 
+    					boolean shouldArriveBy, int arriveByTime, 
+    					boolean withFewestTransfers) {
     	Pathway<TrainConnection> path = new Pathway<TrainConnection>(0);
     	
     	for (int i = 0, j = 1; j < arrs.size(); i++, j++) {
-    		path
+    		Pathway<TrainConnection> tempPath = new Pathway<TrainConnection>(0);
+    		if (shouldDepartBy) {
+    			if (shouldArriveBy) {
+    				if (withFewestTransfers) {
+    					path = fastestPathWithDepartArriveFewestTransfers(arrs.get(i), arrs.get(j), 
+    																	departByTime, arriveByTime);
+    				} else {
+    					path = fastestPathWithDepartArrive(arrs.get(i), arrs.get(j), 
+    													departByTime, arriveByTime);
+    				}
+    			} else {
+    				if (withFewestTransfers) {
+    					path = fastestPathWithDepartFewestTransfers(arrs.get(i), arrs.get(j),
+    																departByTime);
+    				} else {
+    					path = fastestPathWithDepart(arrs.get(i), arrs.get(j), departByTime);
+    				}
+    			}
+    		} else if (shouldArriveBy) {
+    			if (withFewestTransfers) {
+    				path = fastestPathWithArriveFewestTransfers(arrs.get(i), arrs.get(j),
+    														arriveByTime);
+    			} else {
+    				path = fastestPathWithArrive(arrs.get(i), arrs.get(j), arriveByTime);
+    			}
+    		} else {
+    			if (withFewestTransfers) {
+    				path = fastestPathWithFewestTransfers(arrs.get(i), arrs.get(j));
+    			} else {
+    				path = JsonTest.fastestPathWithNoContraints(arrs.get(i), arrs.get(j));
+    			}
+    		}
     	}
     	
     	return null;
     }
-    */
+    
+    public static ArrayList<Station> listOfStationNameToListOfStations(ArrayList<String> arrString, Graph g) {
+    	ArrayList<Station> arrStation = new ArrayList<Station>();
+    	for (String s : arrString) {
+    		arrStation.add(g.getStationByName(s));
+    	}
+    	return arrStation;
+    }
+    
     public static int getCurrentEpochTime() {
         long ct = System.currentTimeMillis()/1000;
         int cti = (int) ct;
