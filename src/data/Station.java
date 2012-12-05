@@ -67,6 +67,26 @@ public class Station {
 		return ae.get(idx);
 	}
 	
+	public int getPotentialIncomingPathEdgeCount(int time) {
+		int count = 0;
+		for (Edge e : outgoingEdges) {
+			if (time <= e.getWeight()) {
+				count++;
+			}
+		}
+		return count;
+	}
+	public Edge getPotentialIncomingPathEdge(int idx, int time) {
+		ArrayList<Edge> ae = new ArrayList<Edge>();
+		for (Edge e : outgoingEdges) {
+			if (time <= e.getWeight()) {
+				ae.add(e);
+			}
+		}
+		return ae.get(idx);
+	}
+	
+	
 	public String toString() {
 		String s = "";
 		s += "StationName:" + name;
