@@ -6,7 +6,7 @@ Contacts:		[@husky.neu.edu]
 		froh.j
 		wilson.p
 
-Our project is pretty simple so far, the only thing you need to do to get our project going is:
+Our project is pretty simple so far, and to get our application running:
 
 Please cd into our project folder once you are done uncompressing it.
 
@@ -16,6 +16,12 @@ Now simply type the following:
 
 $ make run
 
-Once the application is running, simply press the "Fetch Train Data" button located at the bottom of the application window.
+After you have entered your destinations using the drop-down menus and/or by entering them by hand, simply press the "Plan My Trip!" button located at the bottom of the application window. You will be taken to the Itinerary view, where it will show you all the train information.
 
 ——————————————————————————————————————————————————————————————————
+
+To make sure the data collection is working, simply type:
+
+$ make test
+
+and watch as the data gets displayed before you.
