@@ -86,7 +86,9 @@ public class Graph {
     }
     */
 
-    public Pathway<TrainConnection> depthFirstSearch(Station startStation, Station endStation, int currentTime, int departByTime, int arriveByTime) {
+    public Pathway<TrainConnection> depthFirstSearch(Station startStation, Station endStation, 
+    											int currentTime, int departByTime, 
+    											int arriveByTime, boolean withFewestTransfer) {
     	Pathway<TrainConnection> pathway = new Pathway<TrainConnection>(arriveByTime);    	
     	System.out.println("PathwayTime=" + pathway.getTime());
     	
