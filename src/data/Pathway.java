@@ -8,10 +8,11 @@ public class Pathway<T> extends ArrayList<T>{
 	 */
 	private static final long serialVersionUID = 1L;
 	//private ArrayList<TrainConnection> tc = new ArrayList<TrainConnection>();
-	private int currentTime = 15000;
+	private int currentTime;
 	
-	public Pathway(){
+	public Pathway(int actualTime){
 		super();
+		this.currentTime = actualTime;
 	};
 	
 

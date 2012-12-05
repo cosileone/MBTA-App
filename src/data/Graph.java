@@ -86,27 +86,38 @@ public class Graph {
     }
     */
 
-    public Pathway<TrainConnection> depthFirstSearch(Station startStation, Station endStation, int departByTime, int arriveByTime) {
-    	Pathway<TrainConnection> pathway = new Pathway<TrainConnection>();
-    	int cutoffTime = 15000;
-    	
+    public Pathway<TrainConnection> depthFirstSearch(Station startStation, Station endStation, int currentTime, int departByTime, int arriveByTime) {
+    	Pathway<TrainConnection> pathway = new Pathway<TrainConnection>(arriveByTime);    	
+    	System.out.println("PathwayTime=" + pathway.getTime());
     	
         for (int i = 0; i < startStation.getIncomingEdgeCount(); i++) {
-        	Pathway<TrainConnection> tempPathway = new Pathway<TrainConnection>();
+    	//for (int i = 0; i < startStation.getPotentialIncomingPathEdgeCount(departByTime); i++) {
+        	Pathway<TrainConnection> tempPathway = new Pathway<TrainConnection>(arriveByTime);
             Edge e = startStation.getIncomingEdge(i);
-                if((e.getWeight() - departByTime) >= 0) {		
-                	// And since we've already departed, we don't need to pass the variable to dfsHelper (only arrivalTime)
-                	TrainConnection firstStop = new TrainConnection(e.getTripID(), 
-                			e.getEndStation().getName(), e.getWeight());
-                    tempPathway.add(firstStop);
-                    dfsHelper(startStation, endStation, pathway, tempPathway, arriveByTime);
+            
+            /*
+            System.out.println("CurrentTimeSentToGraph=" + currentTime);
+            System.out.println("DepartByTimeSentToGraph=" + departByTime);
+            System.out.println("ArriveByTimeSentToGraph=" + arriveByTime);
+            System.out.println("EdgeWeight=" + e.getWeight());
+            System.out.println("Edge=" + e);
+            System.out.println("++++++++++++");
+            System.out.println("++++++++++++");
+			*/
+
+            if((e.getWeight() - departByTime) >= 0) {		
+            	// And since we've already departed, we don't need to pass the variable to dfsHelper (only arrivalTime)
+            	TrainConnection firstStop = new TrainConnection(e.getTripID(), 
+            									e.getEndStation().getName(), e.getWeight());
+                    	tempPathway.add(firstStop);
+                    	dfsHelper(startStation, endStation, pathway, tempPathway, arriveByTime);
                     //break;
-                }
+            }
         }
         return pathway;
     }
     
-    public void dfsHelper(Station ss, Station es, Pathway<TrainConnection> completedPath, 
+    private void dfsHelper(Station ss, Station es, Pathway<TrainConnection> completedPath, 
     		Pathway<TrainConnection> tp, int arriveByTime) {
     	
     	int t;
@@ -153,10 +164,12 @@ public class Graph {
     				break;
     			}
     		} else {
+    			/*
     			if (tempTC.getStation().equals("Park Street")) {
     				int q = 999;
     				q += 1;
     			}
+    			*/
     			tp.add(tempTC);
     			dfsHelper(e.getEndStation(), es, completedPath, tp, arriveByTime);
     		}
