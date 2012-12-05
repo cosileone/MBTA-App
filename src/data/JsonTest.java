@@ -3,6 +3,8 @@ package data;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Stack;
@@ -126,19 +128,40 @@ public class JsonTest
             String testRed = "Resources/Test Files/TestRed_2012_10_19.json";
 
             String shortTestBlue = "Resources/Test Files/shortTestBlue.json";
+            String shortTestBlue2 = "Resources/Test Files/shortTestBlue2.json";
             String shortTestOrange = "Resources/Test Files/shortTestOrange.json";
             String shortTestRed = "Resources/Test Files/shortTestRed.json";
+            
+            String LIVE_DATA_BLUE = "http://developer.mbta.com/lib/rthr/blue.json";
+            String LIVE_DATA_ORANGE = "http://developer.mbta.com/lib/rthr/orange.json";
+            String LIVE_DATA_RED = "http://developer.mbta.com/lib/rthr/red.json";
 
             ArrayList<String> files = new ArrayList<String>();
-            files.add(testBlue);
-            files.add(testOrange);
-            files.add(testRed);
+            files.add(shortTestBlue2);
+            files.add(shortTestOrange);
+            files.add(shortTestRed);
 
-            tripl = jsonFilesToTripList(files);
+            tripl = jsonFilesToTripList(files, false);
 
+            int currentTime = (int) System.currentTimeMillis();
+            long currTime = System.currentTimeMillis();
+            long ct = System.currentTimeMillis()/1000;
+            int cti = (int) ct;
+
+
+            //int currentTime = 0;
+
+            int largeInt = 20000 + currentTime;
+            System.out.println("currentTime=" + currentTime);
+            System.out.println("currTime=" + currTime);
+            System.out.println("ct=" + ct);
+            System.out.println("cti=" + cti);
+            System.out.println("1762123476");
+            
             Graph g = new Graph();
             tripListToGraph(tripl, g);
             Station airport = g.getStationByName("Airport");
+            Station aquarium = g.getStationByName("Aquarium");
             Station maverick = g.getStationByName("Maverick");
             Station gov = g.getStationByName("Government Center");
             Station backbay = g.getStationByName("Back Bay");
@@ -148,61 +171,166 @@ public class JsonTest
             Station braintree = g.getStationByName("Braintree");
             
             System.out.println("Graph:" + g.toString());
-            int largeInt = 20000;
+            
             
             // A thing to note, we define quickest path as a path that gets you there the soonest
             //  rather than one that gets you there the soonest and in the least amount of travel time
             //  although, I don't think the latter would be overly difficult to implement.
-            Pathway<TrainConnection> am = g.depthFirstSearch(airport, maverick, 0, largeInt);
+
+
+            /*
+            Pathway<TrainConnection> am = g.depthFirstSearch(airport, maverick, currentTime, 0, largeInt);
+            Pathway<TrainConnection> am2 = fastestPathWithNoContraints(airport, maverick);
             System.out.println(am.toString());
-            Pathway<TrainConnection> ma = g.depthFirstSearch(maverick, airport, 0, largeInt);
+            System.out.println(am2.toString());
+            
+            System.out.println("+++++++++++++++++++++++++++++");
+            
+            Pathway<TrainConnection> ma = g.depthFirstSearch(maverick, airport, currentTime, 0, largeInt);
+            Pathway<TrainConnection> ma2 = fastestPathWithNoContraints(maverick, airport);
             System.out.println(ma.toString());
-            Pathway<TrainConnection> ag = g.depthFirstSearch(airport, gov, 0, largeInt);
+            System.out.println(ma2.toString());
+            
+            System.out.println("+++++++++++++++++++++++++++++");
+*/
+            //currentTime = 1350686050;
+            
+            //  1354672388
+            
+            /*     SITUATION_1
+            CurrentTime = 		1354668399
+            Airport=			1354671871
+            Maverick=			1354672113
+            Aquarium=			1354672251
+            State Street=		1354672325
+            Government Center=	1354672406
+            
+            
+            
+            SITUATION_2
+            CurrentTime=		1354688399
+            Airport=			1354671923
+            Maverick=			1354672068
+            Aquarium=			1354672204
+            State Street=		1354672278
+            Government Center=	1354672359
+            */
+            /*
+            System.out.println("LARGE_INT EVERYONE=" + largeInt);
+            Pathway<TrainConnection> ag = g.depthFirstSearch(airport, gov, currentTime, currentTime, largeInt);
+            Pathway<TrainConnection> ag2 = fastestPathWithNoContraints(airport, gov);
+            System.out.println("+++++++++++++++++++++++++++++ RESULT 1 +++++++++++++++++++++++++++++");
             System.out.println(ag.toString());
-            Pathway<TrainConnection> ga = g.depthFirstSearch(gov, airport, 0, largeInt);
+            System.out.println("+++++++++++++++++++++++++++++ RESULT 2 +++++++++++++++++++++++++++++");
+            System.out.println(ag2.toString());
+
+            System.out.println("+++++++++++++++++++++++++++++");
+            
+            */
+            
+            System.out.println("LARGE_INT EVERYONE=" + largeInt);
+            Pathway<TrainConnection> ag = g.depthFirstSearch(airport, aquarium, currentTime, currentTime, largeInt);
+            Pathway<TrainConnection> ag2 = fastestPathWithNoContraints(airport, aquarium);
+            System.out.println("+++++++++++++++++++++++++++++ RESULT 1 +++++++++++++++++++++++++++++");
+            System.out.println(ag.toString());
+            System.out.println("+++++++++++++++++++++++++++++ RESULT 2 +++++++++++++++++++++++++++++");
+            System.out.println(ag2.toString());
+
+            System.out.println("+++++++++++++++++++++++++++++");
+            
+            
+            /*
+            Pathway<TrainConnection> g1 = g.depthFirstSearch(airport, gov, 0, 0, largeInt);
+            Pathway<TrainConnection> g2 = fastestPathWithNoContraints(airport, gov);
+            System.out.println("+++++++++++++++++++++++++++++ RESULT 3 +++++++++++++++++++++++++++++");
+            System.out.println(g1.toString());
+            System.out.println("+++++++++++++++++++++++++++++ RESULT 4 +++++++++++++++++++++++++++++");
+            System.out.println(g2.toString());
+
+            System.out.println("+++++++++++++++++++++++++++++");
+            
+/*
+            Pathway<TrainConnection> ga = g.depthFirstSearch(gov, airport, currentTime, 0, largeInt);
+            Pathway<TrainConnection> ga2 = fastestPathWithNoContraints(gov, airport);
             System.out.println(ga.toString());
-            Pathway<TrainConnection> abb = g.depthFirstSearch(airport, backbay, 0, largeInt);
+            System.out.println(ga2.toString());
+            
+            System.out.println("+++++++++++++++++++++++++++++");
+
+            Pathway<TrainConnection> abb = g.depthFirstSearch(airport, backbay, currentTime, 0, largeInt);
+            Pathway<TrainConnection> abb2 = fastestPathWithNoContraints(airport, backbay);
             System.out.println(abb.toString());
-            Pathway<TrainConnection> bba = g.depthFirstSearch(backbay, airport, 0, largeInt);
+            System.out.println(abb2.toString());
+
+            System.out.println("+++++++++++++++++++++++++++++");
+
+            Pathway<TrainConnection> bba = g.depthFirstSearch(backbay, airport, currentTime, 0, largeInt);
+            Pathway<TrainConnection> bba2 = fastestPathWithNoContraints(backbay, airport);
             System.out.println(bba.toString());
+            System.out.println(bba2.toString());
+
+            System.out.println("+++++++++++++++++++++++++++++");
+
             
             // RED
-            Pathway<TrainConnection> ph = g.depthFirstSearch(harvard, porter, 0, largeInt);
+            Pathway<TrainConnection> ph = g.depthFirstSearch(harvard, porter, currentTime, 0, largeInt);
+            Pathway<TrainConnection> ph2 = fastestPathWithNoContraints(harvard, porter);
             System.out.println(ph.toString());
-            Pathway<TrainConnection> hp = g.depthFirstSearch(porter, harvard, 0, largeInt);
-            System.out.println(hp.toString());
+            System.out.println(ph2.toString());
             
-            Pathway<TrainConnection> sb = g.depthFirstSearch(savHill, braintree, 0, largeInt);
-            System.out.println(sb.toString());
-            
-            Pathway<TrainConnection> bs = g.depthFirstSearch(braintree, savHill, 0, largeInt);
-            System.out.println(bs.toString());
+            System.out.println("+++++++++++++++++++++++++++++");
 
+            Pathway<TrainConnection> hp = g.depthFirstSearch(porter, harvard, currentTime, 0, largeInt);
+            Pathway<TrainConnection> hp2 = fastestPathWithNoContraints(porter, harvard);
+            System.out.println(hp.toString());
+            System.out.println(hp2.toString());
+            
+            System.out.println("+++++++++++++++++++++++++++++");
+
+            Pathway<TrainConnection> sb = g.depthFirstSearch(savHill, braintree, currentTime, 0, largeInt);
+            Pathway<TrainConnection> sb2 = fastestPathWithNoContraints(savHill, braintree);
+            System.out.println(sb.toString());
+            System.out.println(sb2.toString());
+            
+            System.out.println("+++++++++++++++++++++++++++++");
+
+            Pathway<TrainConnection> bs = g.depthFirstSearch(braintree, savHill, currentTime, 0, largeInt);
+            Pathway<TrainConnection> bs2 = fastestPathWithNoContraints(braintree, savHill);
+            System.out.println(bs.toString());
+            System.out.println(bs2.toString());
+*/
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
 
-    public static TripList jsonFilesToTripList(ArrayList<String> filenames) throws IOException {
-        TripList tl1 = jfttl(filenames.get(0));
-        TripList tl2 = jfttl(filenames.get(1));
-        TripList tl3 = jfttl(filenames.get(2));
+    public static TripList jsonFilesToTripList(ArrayList<String> filenames, boolean fromInternet) throws IOException {
+        TripList tl1 = jfttl(filenames.get(0), fromInternet);
+        //TripList tl2 = jfttl(filenames.get(1), fromInternet);
+        //TripList tl3 = jfttl(filenames.get(2), fromInternet);
 
-        tl1.append(tl2);
-        tl1.append(tl3);
+        //tl1.append(tl2);
+        //tl1.append(tl3);
 
         return tl1;
     }
 
 
-    public static TripList jfttl(String filename) throws IOException {
+    public static TripList jfttl(String filename, boolean fromInternet) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         TripList tripl = new TripList();
 
         try {
-
-            BufferedReader fileReader = new BufferedReader(new FileReader(filename));
+        	
+        	BufferedReader fileReader;
+            if (fromInternet) {
+            	URL url = new URL(filename);
+                fileReader = new BufferedReader(new InputStreamReader(url.openStream()));
+            } else {
+            	fileReader = new BufferedReader(new FileReader(filename));
+            }
+            
             JsonNode rootNode = mapper.readTree(fileReader);
 
             // IMPORTANT
@@ -286,23 +414,33 @@ public class JsonTest
     	g.addAllStations(arrs);
     	
     	
+    	int dataTime = t.getCurrentTime();
+    	System.out.println("DataTime=" + dataTime);
+    	
     	for (Trip trip : t.getTrips()) {
+    		int timeStamp = trip.getPosition().getTimestamp();
+    		
     		for (int i = 0, j = 1; j < trip.getPredictions().size(); i++, j++) {
         		Prediction p1 = trip.getPredictions().get(i);
         		Prediction p2 = trip.getPredictions().get(j);
         		
-        		int weight = p2.getSeconds();
+        		int weight;
+        		// Adjust for the current time
+        		if (timeStamp == 0) {
+        			weight = p2.getSeconds() + dataTime;
+        		} else {
+        			weight = p2.getSeconds() + timeStamp;
+        		}
+        		
         		String line = trip.getLine();
         		String tripID = trip.getTripID();
         		String startStation = p1.getStop();
         		String endStation = p2.getStop();
         		Station ss = getStationByName(arrs, startStation);
         		Station es = getStationByName(arrs, endStation);
-        		//Edge e = new Edge(weight, line, tripID, ss, es);
-        		//ss.addOutgoingEdge(e);
         		g.addEdge(weight, line, tripID, ss, es);
         		
-        		int w = p1.getSeconds();
+        		int w = p1.getSeconds() + timeStamp;
     			if ((i == 0) && (w >= 0)) {			// If at the first station in the list, 
     				g.addEdge(w, line, tripID, nullStation, ss);
     			}
@@ -318,7 +456,77 @@ public class JsonTest
     	}
     	throw new IllegalArgumentException(name + " is not in the list");
     }
-    
 
+    
+    private static Pathway<TrainConnection> fastestPath(Station start, Station end, int currentTime, int departByTime, int arriveByTime) {
+        String testBlue = "Resources/Test Files/TestBlue_2012_10_19.json";
+        String testOrange = "Resources/Test Files/TestOrange_2012_10_19.json";
+        String testRed = "Resources/Test Files/TestRed_2012_10_19.json";
+
+        String shortTestBlue = "Resources/Test Files/shortTestBlue.json";
+        String shortTestBlue2 = "Resources/Test Files/shortTestBlue2.json";
+        String shortTestOrange = "Resources/Test Files/shortTestOrange.json";
+        String shortTestRed = "Resources/Test Files/shortTestRed.json";
+        
+        String LIVE_DATA_BLUE = "http://developer.mbta.com/lib/rthr/blue.json";
+        String LIVE_DATA_ORANGE = "http://developer.mbta.com/lib/rthr/orange.json";
+        String LIVE_DATA_RED = "http://developer.mbta.com/lib/rthr/red.json";
+
+        ArrayList<String> fileLocations = new ArrayList<String>();
+        fileLocations.add(shortTestBlue2);
+        fileLocations.add(shortTestOrange);
+        fileLocations.add(shortTestRed);
+
+        TripList tripl = new TripList();
+        try {
+        	tripl = jsonFilesToTripList(fileLocations, false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+    	Graph g = new Graph();
+        tripListToGraph(tripl, g);
+        
+        return g.depthFirstSearch(start, end, currentTime, departByTime, arriveByTime);
+    }
+    
+    public static Pathway<TrainConnection> fastestPathWithDepart(Station start, Station end, int departByTime) {
+    	int timeNow = JsonTest.getCurrentEpochTime();
+    	int inf = (int) Double.POSITIVE_INFINITY;
+
+    	return JsonTest.fastestPath(start, end, timeNow, departByTime, inf);
+    }
+    public static Pathway<TrainConnection> fastestPathWithNoContraints(Station start, Station end) {
+    	int timeNow = JsonTest.getCurrentEpochTime();
+    	int inf = (int) Double.POSITIVE_INFINITY;
+
+    	return JsonTest.fastestPath(start, end, timeNow, 0, inf);
+    }
+    public static Pathway<TrainConnection> fastestPathWithDepartArrive(Station start, Station end, int departByTime, int arriveByTime) {
+    	int timeNow = JsonTest.getCurrentEpochTime();
+
+    	return JsonTest.fastestPath(start, end, timeNow, departByTime, arriveByTime);
+    }
+    public static Pathway<TrainConnection> fastestPathWithArrive(Station start, Station end, int arriveByTime) {
+    	int timeNow = JsonTest.getCurrentEpochTime();
+
+    	return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime);
+    }
+    /*
+    public static Pathway<TrainConnection> fastestSortedPath(ArrayList<String> arrs, int departByTime, int arriveByTime) {
+    	Pathway<TrainConnection> path = new Pathway<TrainConnection>(0);
+    	
+    	for (int i = 0, j = 1; j < arrs.size(); i++, j++) {
+    		path
+    	}
+    	
+    	return null;
+    }
+    */
+    public static int getCurrentEpochTime() {
+        long ct = System.currentTimeMillis()/1000;
+        int cti = (int) ct;
+        return cti;
+    }
 }
 
