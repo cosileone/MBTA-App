@@ -15,16 +15,21 @@ $ cd MBTA_App
 
 COMPILE & RUN:
 ——————————————————————————————————————————————————————————————————
-Just type "make run" in the CLI - no quotes in the folder
+Just type "make run" in the CLI - no quotes
 $ make run
 
+*to run test's just type
+$ make test
 
 TO USE: - Once the application is running
 ——————————————————————————————————————————————————————————————————
 [X]The user wants to know where she can go using the T. (Essential)
 
  Each box is color coded per line and has all available stops listed sequentially.
- Click on stops to add them to the trip planner
+ 
+ User: Selects dropbox (Red, Blue, Green) for destinations by line.
+ System: Produces selectable list of all available stations based on line chosen. 
+ User: Repeats above step for all destinations.
 
 [/]The user wants to know the current location of all trains. (Essential)
 
@@ -33,17 +38,19 @@ TO USE: - Once the application is running
 
 [/]The user wants to know when the next trains get to stop A. (Essential)
 
-[X] Algorithm working
-    - Train locations are currently displayed in list format back end
-[ ] Add to GUI
-
-Add one stop to the trip planner. 
-Pressing plan my trip will produce the time for stop A
+User: Types desired station into text form; clicks add.
+System: Click handler adds form value to the trip planner queue.
+User: Clicks on the ‘plan trip’ button to display arrival times of next train.
+System: Returns next arrival from desired station.
 
 [/]The user wants to know her options for getting from stop A to stop B. (Essential)
 
-[X] A->B algorithm 
-[ ] Add to GUI
+User: Selects start station from one of the dropboxes.  
+System: Adds form value to the trip planner queue.
+User: Selects end station from one of the dropboxes.  
+System: Adds form value to the trip planner queue.
+User: Clicks on the ‘plan trip’ button
+System: Returns arrival times and route
 
 
 [ ] The user wants to know her options for getting to an ordered list of stops. (Desirable)
@@ -57,8 +64,8 @@ Pressing plan my trip will produce the time for stop A
 
 []For any trip on the T, the user wants the option to specify departure and/or arrival times. (Desirable)
 
-[]For any trip on the T, the user wants to know the fastest route, the earliest departure, the earliest arrival, and fewest transfers. (Desirable)
-
+[X]For any trip on the T, the user wants to know the fastest route, the earliest departure, the earliest arrival, and fewest transfers. (Desirable)
+   
 
 REQUIREMENTS:
 ——————————————————————————————————————————————————————————————————
