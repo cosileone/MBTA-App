@@ -1,15 +1,16 @@
 package GUI;
 
 import static GUI.Constants.*;
-import data.Path;
+import data.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
 
 public class MainWindowGUI extends JFrame {
-	Path journey = new Path();
+	public ArrayList<String> journey = new ArrayList<String>();
 	
 	public MainWindowGUI(){
 		initComponents();
@@ -113,7 +114,7 @@ public class MainWindowGUI extends JFrame {
 		
 		/* Map Region Components */
 		JPanel mapRegion = new JPanel(new BorderLayout());
-		ImageIcon mapImage = new ImageIcon(MAP_FILEPATH);
+		ImageIcon mapImage = new ImageIcon(MAP_FILEPATH2);
 		JLabel map = new JLabel(mapImage);
 		JScrollPane mapScrollPane = new JScrollPane(map);
         mapScrollPane.setViewportBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -182,11 +183,11 @@ public class MainWindowGUI extends JFrame {
 	}
 	
 	private void addToJourney(String entry){
-		if (journey.getTrip().contains(entry) || entry.compareTo("") == 0){
+		if (journey.contains(entry) || entry.compareTo("") == 0){
 			//don't add
 		}
 		else {
-			journey.addToTrip(entry);
+			journey.add(entry);
 		}
 	}
 	
@@ -198,7 +199,7 @@ public class MainWindowGUI extends JFrame {
 			public void actionPerformed(ActionEvent ae) {
 				JButton button = (JButton) ae.getSource();
 				JPanel parent = (JPanel) button.getParent();
-				journey.getTrip().remove(button.getText());
+				journey.remove(button.getText());
 				parent.remove(button);
 				
 				parent.repaint();
@@ -207,7 +208,7 @@ public class MainWindowGUI extends JFrame {
 		};
 		
 		// for every string in our Path structure's list of destinations, make a button
-		for (String s : journey.getTrip()){
+		for (String s : journey){
 			JButton tempButton = new JButton(s);
 			tempButton.setSize(DESTINATION_LIST_BUTTON_SIZE);
 			tempButton.addActionListener(button_removeSelf);
@@ -218,7 +219,7 @@ public class MainWindowGUI extends JFrame {
 	}
 	
 	private boolean validJourney(){
-		if(journey.getTrip().isEmpty()){
+		if(journey.isEmpty()){
 			return false;
 		}
 		else {

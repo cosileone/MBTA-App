@@ -9,6 +9,7 @@ public final class Constants {
 	public static final String APP_TITLE = "MBTA Travel Application";
 	/* Resources */
 	public static final String MAP_FILEPATH = "Resources/Images/custom-mbta-map.png";
+	public static final String MAP_FILEPATH2 = "Resources/Images/full-mbta-map.gif";
 	/* Tab Titles and Tooltip Strings */
 	public static final String MAP_TITLE = "Geo Map";
 	public static final String MAP_TOOLTIP = "Switch to MAP view to see a GEO-MAP and enter destinations to plan your trip.";
