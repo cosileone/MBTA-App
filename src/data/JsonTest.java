@@ -682,8 +682,6 @@ public class JsonTest
         
     	return arrT;
     }
-    
-<<<<<<< HEAD
 
     public static ArrayList<ArrayList<String>> permutationsOf(ArrayList<String> arrs) {
     	ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
@@ -722,7 +720,8 @@ public class JsonTest
     		temp.add(arrs.get(i));
     	}
     	return temp;
-=======
+    }
+    
     public static ArrayList<Station> getAllStations(boolean fromInternet){
     	// need to find the files somehow
         ArrayList<String> fileLocations = new ArrayList<String>();
@@ -743,7 +742,6 @@ public class JsonTest
         	arrS.add(tempStation);
         }
         return arrS;
->>>>>>> 1562fd09b61c1b3fcff5823beade0e0f9184c828
     }
 }
 
