@@ -44,6 +44,7 @@ public class JsonTest
 	private final static String testOrange = "Resources/Test Files/TestOrange_2012_10_19.json";
 	private final static String testRed = "Resources/Test Files/TestRed_2012_10_19.json";
 	private final static String shortTestBlue = "Resources/Test Files/shortTestBlue.json";
+	
 	private final static String shortTestBlue2 = "Resources/Test Files/shortTestBlue2.json";
 	private final static String shortTestOrange = "Resources/Test Files/shortTestOrange.json";
 	private final static String shortTestRed = "Resources/Test Files/shortTestRed.json";
