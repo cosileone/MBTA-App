@@ -722,26 +722,26 @@ public class JsonTest
     	return temp;
     }
     
-    public static ArrayList<Station> getAllStations(boolean fromInternet){
-    	// need to find the files somehow
-        ArrayList<String> fileLocations = new ArrayList<String>();
-        fileLocations.add(shortTestBlue2);
-        fileLocations.add(shortTestOrange);
-        fileLocations.add(shortTestRed);
-    
+    public static ArrayList<Train> getAllTrainsIntoStation(String s, boolean fromInternet){
         Graph g = new Graph();
         g = getGraphFromInternet();
         
-        Station s = g.getStationByName("NULL_STATION");
+        //Station s = g.getStationByName("NULL_STATION");
+        ArrayList<Train> arrt = new ArrayList<Train>();
+        Station station = g.getStationByName(s);
+        
         ArrayList<Station> arrS = new ArrayList<Station>();
-        for (Edge e : s.getAllIncomingEdges()) {
+        for (Edge e : station.getAllIncomingEdges()) {
         	// int time = e.getWeight();
         	// String destination = e.getDestination();
+        	String stationName = station.getName();
+        	int arrivalTime = e.getWeight();
+        	String destination = e.getDestination();
+        	Train tempTrain = new Train(stationName, arrivalTime, destination);
         	
-        	Station tempStation = new Station(g.getStationByName(s));
-        	arrS.add(tempStation);
+        	arrt.add(tempTrain);
         }
-        return arrS;
+        return arrt;
     }
 }
 
