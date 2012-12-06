@@ -666,5 +666,27 @@ public class JsonTest
         
     	return arrT;
     }
+    
+    public static ArrayList<Station> getAllStations(boolean fromInternet){
+    	// need to find the files somehow
+        ArrayList<String> fileLocations = new ArrayList<String>();
+        fileLocations.add(shortTestBlue2);
+        fileLocations.add(shortTestOrange);
+        fileLocations.add(shortTestRed);
+    
+        Graph g = new Graph();
+        g = getGraphFromInternet();
+        
+        Station s = g.getStationByName("NULL_STATION");
+        ArrayList<Station> arrS = new ArrayList<Station>();
+        for (Edge e : s.getAllIncomingEdges()) {
+        	// int time = e.getWeight();
+        	// String destination = e.getDestination();
+        	
+        	Station tempStation = new Station(g.getStationByName(s));
+        	arrS.add(tempStation);
+        }
+        return arrS;
+    }
 }
 
