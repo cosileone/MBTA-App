@@ -40,4 +40,19 @@ public class Pathway<T> extends ArrayList<T>{
 			this.add(t);
 		}
 	}
+	public int numTransfers() {
+		if (this.isEmpty()) {
+			return 0;
+		} else {
+			int counter = 0;
+			for (int i = 0, j = 1; j < this.size(); i++, j++) {
+				TrainConnection tc1 = (TrainConnection) this.get(i);
+				TrainConnection tc2 = (TrainConnection) this.get(j);
+				if (!tc1.getTripID().equals(tc2.getTripID())) {
+					counter++;
+				}
+			}
+			return counter;
+		}
+	}
 }

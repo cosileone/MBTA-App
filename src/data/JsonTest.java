@@ -134,8 +134,8 @@ public class JsonTest
     	
         ArrayList<String> files = new ArrayList<String>();
         files.add(LIVE_DATA_BLUE);
-        //files.add(LIVE_DATA_ORANGE);
-        //files.add(LIVE_DATA_RED);
+        files.add(LIVE_DATA_ORANGE);
+        files.add(LIVE_DATA_RED);
     	
         try {
         	tripl = jsonFilesToTripList(files, true);
@@ -172,6 +172,7 @@ public class JsonTest
             Graph g = new Graph();
             g = getGraphFromFiles(files);
 */
+    		/*
             int currentTime = (int) System.currentTimeMillis();
             long currTime = System.currentTimeMillis();
             long ct = System.currentTimeMillis()/1000;
@@ -186,7 +187,7 @@ public class JsonTest
             System.out.println("ct=" + ct);
             System.out.println("cti=" + cti);
             System.out.println("1762123476");
-            
+            */
             /*
             Station airport = g.getStationByName("Airport");
             Station aquarium = g.getStationByName("Aquarium");
@@ -256,7 +257,7 @@ public class JsonTest
             
             */
             
-            System.out.println("LARGE_INT EVERYONE=" + largeInt);
+            //System.out.println("LARGE_INT EVERYONE=" + largeInt);
             
             
             int tNow = JsonTest.getCurrentEpochTime();
@@ -271,6 +272,16 @@ public class JsonTest
             System.out.println("+++++++++++++++++++++++++++++");
             
             
+            //ArrayList<ArrayList<String>> aas = new ArrayList<ArrayList<String>>();
+            
+            ArrayList<String> aas = new  ArrayList<String>();
+            aas.add(Stop.AIRPORT.name);
+            aas.add(Stop.AQUARIUM.name);
+            aas.add(Stop.GOVERNMENT_CENTER.name);
+            //System.out.println("PERMUTATIONS=" + permutationsOf(aas));
+            Pathway<TrainConnection> aag = fastestUnsortedPath(aas, false, 0, false, 0, false);
+            System.out.println(aag.toString());
+
             /*
             Pathway<TrainConnection> g1 = g.depthFirstSearch(airport, gov, 0, 0, largeInt);
             Pathway<TrainConnection> g2 = fastestPathWithNoContraints(airport, gov);
@@ -340,12 +351,6 @@ public class JsonTest
         for (int i = 1; i < filenames.size(); i++) {
         	tl1.append(jfttl(filenames.get(i), fromInternet));
         }
-        //TripList tl2 = jfttl(filenames.get(1), fromInternet);
-        //TripList tl3 = jfttl(filenames.get(2), fromInternet);
-
-        //tl1.append(tl2);
-        //tl1.append(tl3);
-
         return tl1;
     }
 
@@ -371,21 +376,12 @@ public class JsonTest
             mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
             JsonNode triplNode = rootNode.path("TripList");
-
             int ct = triplNode.get("CurrentTime").asInt();
-            long ctl = triplNode.get("CurrentTime").asLong();
-            String cts = triplNode.get("CurrentTime").asText();
-
-            tripl.setCurrentEpochTime(ct);
-            System.out.println("HERE IS THE TIME:" + tripl.getCurrentEpochTime());			// FIXME
-            System.out.println("HERE IS THE LONG TIME:" + ctl);			// FIXME
-            System.out.println("HERE IS THE STRING TIME:" + cts);			// FIXME
-
-
             
+            tripl.setCurrentEpochTime(ct);
             String line = triplNode.get("Line").asText();
             tripl.setLine(line);
-
+            
             JsonNode tNode = triplNode.path("Trips");
 
             Iterator<JsonNode> ite = tNode.elements();
@@ -466,24 +462,14 @@ public class JsonTest
     	
     	
     	int dataTime = t.getCurrentEpochTime();
-    	System.out.println("DataTime=" + dataTime);
+    	//System.out.println("DataTime=" + dataTime);
     	
-    	for (Trip trip : t.getTrips()) {
-    		//int timeStamp = trip.getPosition().getTimestamp();
-    		
+    	for (Trip trip : t.getTrips()) {    		
     		for (int i = 0, j = 1; j < trip.getPredictions().size(); i++, j++) {
         		Prediction p1 = trip.getPredictions().get(i);
         		Prediction p2 = trip.getPredictions().get(j);
         		
         		int weight = p2.getSeconds();
-        		// Adjust for the current time
-        		/*
-        		if (timeStamp == 0) {
-        			weight = p2.getSeconds() + dataTime;
-        		} else {
-        			weight = p2.getSeconds() + timeStamp;
-        		}
-        		*/
         		String line = trip.getLine();
         		String tripID = trip.getTripID();
         		String startStation = p1.getStop();
@@ -493,7 +479,7 @@ public class JsonTest
         		String destination = trip.getDestination();
         		g.addEdge(weight, line, tripID, ss, es, destination);
         		
-        		int w = p1.getSeconds(); // + timeStamp;
+        		int w = p1.getSeconds();
     			if ((i == 0) && (w >= 0)) {			// If at the first station in the list, 
     				g.addEdge(w, line, tripID, nullStation, ss, destination);
     			}
@@ -555,8 +541,8 @@ public class JsonTest
     }
     public static Pathway<TrainConnection> 
     				fastestPathWithDepartArriveFewestTransfers(
-    										String start, String end, 
-    										int departBy, int arriveByTime) {
+    											String start, String end, 
+    											int departBy, int arriveByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
 
     	//return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, true);
@@ -576,9 +562,9 @@ public class JsonTest
     }
     
     public static Pathway<TrainConnection> fastestSortedPath(ArrayList<String> arrs, 
-    					boolean shouldDepartBy, int departByTime, 
-    					boolean shouldArriveBy, int arriveByTime, 
-    					boolean withFewestTransfers) {
+    												boolean shouldDepartBy, int departByTime, 
+    												boolean shouldArriveBy, int arriveByTime, 
+    												boolean withFewestTransfers) {
     	Pathway<TrainConnection> path = new Pathway<TrainConnection>(0);
     	
     	for (int i = 0, j = 1; j < arrs.size(); i++, j++) {
@@ -626,9 +612,39 @@ public class JsonTest
         		path.append(tempPath);
     		}
     	}
-    	
     	return path;
     }
+    
+    public static Pathway<TrainConnection> fastestUnsortedPath(ArrayList<String> arrs, 
+														boolean shouldDepartBy, int departByTime, 
+														boolean shouldArriveBy, int arriveByTime, 
+														boolean withFewestTransfers) {
+    	
+    	int inf = (int) Double.POSITIVE_INFINITY;
+    	Pathway<TrainConnection> pathway = new Pathway<TrainConnection>(inf);
+    	ArrayList<String> loStations = new ArrayList<String>();
+    	ArrayList<ArrayList<String>> loStationsPermutations = new ArrayList<ArrayList<String>>();
+    	loStationsPermutations = permutationsOf(arrs);
+    	
+    	for (ArrayList<String> los : loStationsPermutations) {
+    		Pathway<TrainConnection> tempPathway = new Pathway<TrainConnection>(inf);
+        	tempPathway = JsonTest.fastestSortedPath(los, shouldDepartBy, departByTime, shouldArriveBy, arriveByTime, withFewestTransfers);
+
+    		if (tempPathway.size() > 0) {
+    			if (withFewestTransfers) {
+    				if (tempPathway.numTransfers() < pathway.numTransfers()) {
+    					pathway = tempPathway;
+    				}
+    			} else {
+    				if (tempPathway.getTime() < pathway.getTime()) {
+    					pathway = tempPathway;
+    				}
+    			}
+    		}
+    	}
+    	return pathway;
+    }
+    
     
     public static ArrayList<Station> listOfStationNameToListOfStations(ArrayList<String> arrString, Graph g) {
     	ArrayList<Station> arrStation = new ArrayList<Station>();
@@ -665,6 +681,46 @@ public class JsonTest
         }
         
     	return arrT;
+    }
+    
+
+    public static ArrayList<ArrayList<String>> permutationsOf(ArrayList<String> arrs) {
+    	ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
+    	int length = arrs.size();
+    	
+    	if (length == 1) {
+    		result.add(arrs);
+    		return result;
+    	} else {
+    		String first = arrs.get(0);
+    		ArrayList<String> rest = getSubset(arrs, 1, (length));
+    		ArrayList<ArrayList<String>> simpler = permutationsOf(rest);
+    		
+    		for (ArrayList<String> permutation : simpler) {
+    			ArrayList<ArrayList<String>> additions = insertAtAllPositions(first, permutation);
+    			result.addAll(additions);
+    			}
+    		return result;
+    	}
+    }
+    
+    private static ArrayList<ArrayList<String>> insertAtAllPositions(String s, ArrayList<String> arrs) {
+    	ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
+    	for (int i = 0; i < arrs.size(); i++) {
+    		ArrayList<String> inserted = getSubset(arrs, 0, i);
+    		inserted.add(s);
+    		inserted.addAll(getSubset(arrs, i, (arrs.size())));
+    		result.add(inserted);
+    	}
+    	return result;
+    }
+    private static ArrayList<String> getSubset(ArrayList<String> arrs, int from, int to) {
+    	ArrayList<String> temp = new ArrayList<String>();
+    	
+    	for (int i = from; i < to; i++) {
+    		temp.add(arrs.get(i));
+    	}
+    	return temp;
     }
 }
 
