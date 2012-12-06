@@ -56,7 +56,7 @@ public class MainWindowGUI extends JFrame {
 		JPanel destinationList = new JPanel();
 		
 		/* Text input components */
-		final GhostTextField inputField = new GhostTextField(INPUT_FIELD_FILLER, 20);
+		final GhostTextField inputField = new GhostTextField(INPUT_FIELD_FILLER, 10);
 		inputField.setForeground(GRAY_TEXT_COLOR);
 		JButton submitDestination = new JButton(SUBMIT_DESTINATION_TEXT);
 		
