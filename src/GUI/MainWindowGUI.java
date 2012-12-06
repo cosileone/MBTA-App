@@ -56,7 +56,7 @@ public class MainWindowGUI extends JFrame {
 		JPanel destinationList = new JPanel();
 		
 		/* Text input components */
-		final GhostTextField inputField = new GhostTextField(INPUT_FIELD_FILLER, 10);
+		final GhostTextField inputField = new GhostTextField(INPUT_FIELD_FILLER, 20);
 		inputField.setForeground(GRAY_TEXT_COLOR);
 		JButton submitDestination = new JButton(SUBMIT_DESTINATION_TEXT);
 		
@@ -118,7 +118,7 @@ public class MainWindowGUI extends JFrame {
 		
 		northPanel.add(inputField);
 		northPanel.add(submitDestination);
-		northPanel.add(dropdownLabel);
+		//northPanel.add(dropdownLabel);
 		northPanel.add(blueDropdown);
 		northPanel.add(redDropdown);
 		northPanel.add(orangeDropdown);
