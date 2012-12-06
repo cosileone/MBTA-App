@@ -27,6 +27,7 @@ public final class Constants {
 	public static final Color MYORANGE = new Color(230,140,0);
 	public static final String SORT_DEST_CHECKBOX_TEXT = "Sorted List";
 	public static final Dimension DESTINATION_LIST_BUTTON_SIZE = new Dimension(0,50);
+	public static final String[] TRIP_PREFERENCES = {"Fastest Route","Fewest Transfers","Earliest Departure","Earliest Arrival"};
 	public static final String PLAN_TRIP_BUTTON_TEXT = "Plan Your Trip!";
 	/* Itinerary View Components */
 	public static final String ITINERARY_FILLER = "Your trip's written instructions will be shown here.";

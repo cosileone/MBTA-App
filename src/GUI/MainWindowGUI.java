@@ -12,6 +12,7 @@ import javax.swing.*;
 public class MainWindowGUI extends JFrame {
 	public ArrayList<String> journey = new ArrayList<String>();
 	public boolean sortedList = false;
+	public int tripPreference = 0;
 	
 	public MainWindowGUI(){
 		initComponents();
@@ -107,6 +108,14 @@ public class MainWindowGUI extends JFrame {
 			}
 		});
 		
+		JComboBox tripStyles = new JComboBox(TRIP_PREFERENCES);
+		tripStyles.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				JComboBox temp = (JComboBox) ae.getSource();
+				tripPreference = temp.getSelectedIndex();
+			}
+		});
+		
 		northPanel.add(inputField);
 		northPanel.add(submitDestination);
 		northPanel.add(dropdownLabel);
@@ -114,6 +123,7 @@ public class MainWindowGUI extends JFrame {
 		northPanel.add(redDropdown);
 		northPanel.add(orangeDropdown);
 		northPanel.add(sortedCheckbox);
+		northPanel.add(tripStyles);
 		
 		mapPanel.add(northPanel, BorderLayout.PAGE_START);
 		/* ---- End North Section ---- */
