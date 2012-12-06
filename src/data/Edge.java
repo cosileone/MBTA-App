@@ -8,13 +8,15 @@ public class Edge {
 	private String tripID;
 	private Station startStation;
 	private Station endStation;
+	private String destination;
 	
-	public Edge(int w, String l, String t, Station ss, Station es) {
+	public Edge(int w, String l, String t, Station ss, Station es, String destination) {
 		this.weight = w;
 		this.line = l;
 		this.tripID = t;
 		this.startStation = ss;
 		this.endStation = es;
+		this.destination = destination;
 	}
 	
 	public int getWeight() {
@@ -31,6 +33,9 @@ public class Edge {
 	}
 	public Station getEndStation() {
 		return this.endStation;
+	}
+	public String getDestination() {
+		return this.destination;
 	}
 	
 	public static Comparator<Edge> EdgeWeightComparator = new Comparator<Edge>() {

@@ -30,13 +30,23 @@ public class JsonTest
 		TRANSFER;
 	}
 	
-	public final static String BLUE_LINE = "blue";
-	public final static String RED_LINE = "red";
-	public final static String RED_A_LINE = "red_a";
-	public final static String RED_B_LINE = "red_b";
-	public final static String ORANGE_LINE = "orange";
-	public final static String TRANSFER_LINE = "transfer";
+	private final static String BLUE_LINE = "blue";
+	private final static String RED_LINE = "red";
+	private final static String RED_A_LINE = "red_a";
+	private final static String RED_B_LINE = "red_b";
+	private final static String ORANGE_LINE = "orange";
+	private final static String TRANSFER_LINE = "transfer";
+	private final static String LIVE_DATA_BLUE = "http://developer.mbta.com/lib/rthr/blue.json";
+	private final static String LIVE_DATA_ORANGE = "http://developer.mbta.com/lib/rthr/orange.json";
+	private final static String LIVE_DATA_RED = "http://developer.mbta.com/lib/rthr/red.json";
 	
+	private final static String testBlue = "Resources/Test Files/TestBlue_2012_10_19.json";
+	private final static String testOrange = "Resources/Test Files/TestOrange_2012_10_19.json";
+	private final static String testRed = "Resources/Test Files/TestRed_2012_10_19.json";
+	private final static String shortTestBlue = "Resources/Test Files/shortTestBlue.json";
+	private final static String shortTestBlue2 = "Resources/Test Files/shortTestBlue2.json";
+	private final static String shortTestOrange = "Resources/Test Files/shortTestOrange.json";
+	private final static String shortTestRed = "Resources/Test Files/shortTestRed.json";
 	
     public enum Stop {
         WONDERLAND ("Wonderland", BLUE_LINE),             // Blue line trains
@@ -117,32 +127,51 @@ public class JsonTest
         }
     }
 
-
-    public static void main(String[] args) throws IOException {
-            TripList tripl = new TripList();
-
+    
+    public static Graph getGraphFromInternet() {
+    	TripList tripl = new TripList();
+    	Graph g = new Graph();
+    	
+        ArrayList<String> files = new ArrayList<String>();
+        files.add(LIVE_DATA_BLUE);
+        //files.add(LIVE_DATA_ORANGE);
+        //files.add(LIVE_DATA_RED);
+    	
         try {
+        	tripl = jsonFilesToTripList(files, true);
+            tripListToGraph(tripl, g);
+        } catch (IOException e) {
+        	e.printStackTrace();
+        }
+        
+        return g;
+    }
 
-            String testBlue = "Resources/Test Files/TestBlue_2012_10_19.json";
-            String testOrange = "Resources/Test Files/TestOrange_2012_10_19.json";
-            String testRed = "Resources/Test Files/TestRed_2012_10_19.json";
-
-            String shortTestBlue = "Resources/Test Files/shortTestBlue.json";
-            String shortTestBlue2 = "Resources/Test Files/shortTestBlue2.json";
-            String shortTestOrange = "Resources/Test Files/shortTestOrange.json";
-            String shortTestRed = "Resources/Test Files/shortTestRed.json";
-            
-            String LIVE_DATA_BLUE = "http://developer.mbta.com/lib/rthr/blue.json";
-            String LIVE_DATA_ORANGE = "http://developer.mbta.com/lib/rthr/orange.json";
-            String LIVE_DATA_RED = "http://developer.mbta.com/lib/rthr/red.json";
-
+    public static Graph getGraphFromFiles(ArrayList<String> files) {
+    	TripList tripl = new TripList();
+    	Graph g = new Graph();
+    	
+        try {
+        	tripl = jsonFilesToTripList(files, false);
+            tripListToGraph(tripl, g);
+        } catch (IOException e) {
+        	e.printStackTrace();
+        }
+        
+        return g;
+    }
+    
+    
+    public static void main(String[] args) {
+    		/*
             ArrayList<String> files = new ArrayList<String>();
             files.add(shortTestBlue2);
             files.add(shortTestOrange);
             files.add(shortTestRed);
 
-            tripl = jsonFilesToTripList(files, false);
-
+            Graph g = new Graph();
+            g = getGraphFromFiles(files);
+*/
             int currentTime = (int) System.currentTimeMillis();
             long currTime = System.currentTimeMillis();
             long ct = System.currentTimeMillis()/1000;
@@ -158,8 +187,7 @@ public class JsonTest
             System.out.println("cti=" + cti);
             System.out.println("1762123476");
             
-            Graph g = new Graph();
-            tripListToGraph(tripl, g);
+            /*
             Station airport = g.getStationByName("Airport");
             Station aquarium = g.getStationByName("Aquarium");
             Station maverick = g.getStationByName("Maverick");
@@ -171,7 +199,7 @@ public class JsonTest
             Station braintree = g.getStationByName("Braintree");
             
             System.out.println("Graph:" + g.toString());
-            
+            */
             
             // A thing to note, we define quickest path as a path that gets you there the soonest
             //  rather than one that gets you there the soonest and in the least amount of travel time
@@ -229,8 +257,12 @@ public class JsonTest
             */
             
             System.out.println("LARGE_INT EVERYONE=" + largeInt);
-            Pathway<TrainConnection> ag = g.depthFirstSearch(airport, aquarium, currentTime, currentTime, largeInt, false);
-            Pathway<TrainConnection> ag2 = fastestPathWithNoContraints(airport, aquarium);
+            
+            
+            int tNow = JsonTest.getCurrentEpochTime();
+            //Pathway<TrainConnection> ag = g.depthFirstSearch(airport, aquarium, cti, cti, largeInt, false);
+            Pathway<TrainConnection> ag = fastestPathWithDepart(Stop.AIRPORT.name, Stop.AQUARIUM.name, tNow);
+            Pathway<TrainConnection> ag2 = fastestPathWithNoContraints(Stop.AIRPORT.name, Stop.AQUARIUM.name);
             System.out.println("+++++++++++++++++++++++++++++ RESULT 1 +++++++++++++++++++++++++++++");
             System.out.println(ag.toString());
             System.out.println("+++++++++++++++++++++++++++++ RESULT 2 +++++++++++++++++++++++++++++");
@@ -299,14 +331,15 @@ public class JsonTest
             System.out.println(bs.toString());
             System.out.println(bs2.toString());
 */
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 
     public static TripList jsonFilesToTripList(ArrayList<String> filenames, boolean fromInternet) throws IOException {
         TripList tl1 = jfttl(filenames.get(0), fromInternet);
+        
+        for (int i = 1; i < filenames.size(); i++) {
+        	tl1.append(jfttl(filenames.get(i), fromInternet));
+        }
         //TripList tl2 = jfttl(filenames.get(1), fromInternet);
         //TripList tl3 = jfttl(filenames.get(2), fromInternet);
 
@@ -340,7 +373,16 @@ public class JsonTest
             JsonNode triplNode = rootNode.path("TripList");
 
             int ct = triplNode.get("CurrentTime").asInt();
-            tripl.setCurrentTime(ct);
+            long ctl = triplNode.get("CurrentTime").asLong();
+            String cts = triplNode.get("CurrentTime").asText();
+
+            tripl.setCurrentEpochTime(ct);
+            System.out.println("HERE IS THE TIME:" + tripl.getCurrentEpochTime());			// FIXME
+            System.out.println("HERE IS THE LONG TIME:" + ctl);			// FIXME
+            System.out.println("HERE IS THE STRING TIME:" + cts);			// FIXME
+
+
+            
             String line = triplNode.get("Line").asText();
             tripl.setLine(line);
 
@@ -359,7 +401,8 @@ public class JsonTest
                 String dest = tempTripNode.get("Destination").asText();
                 tempTrip.setDestination(dest);
 
-                if(tempTripNode.has("Position")) {
+                boolean hasPosition = tempTripNode.has("Position");
+                if(hasPosition) {
 
                     JsonNode posNode = tempTripNode.path("Position");
                     Position pos = new Position();
@@ -391,7 +434,15 @@ public class JsonTest
                     String tStop = tPredNode.get("Stop").asText();
                     tempPred.setStop(tStop);
                     int tSeconds = tPredNode.get("Seconds").asInt();
-                    tempPred.setSeconds(tSeconds);
+                    if (tSeconds < 0) {
+                    	continue;
+                    }
+                    if(hasPosition) {
+                    	tempPred.setSeconds(tSeconds + tempTrip.getPosition().getTimestamp());
+                    } else {
+                    	tempPred.setSeconds(tSeconds + tripl.getCurrentEpochTime());
+                    }
+                    
 
                     tempTrip.addPrediction(tempPred);
                 }
@@ -414,35 +465,37 @@ public class JsonTest
     	g.addAllStations(arrs);
     	
     	
-    	int dataTime = t.getCurrentTime();
+    	int dataTime = t.getCurrentEpochTime();
     	System.out.println("DataTime=" + dataTime);
     	
     	for (Trip trip : t.getTrips()) {
-    		int timeStamp = trip.getPosition().getTimestamp();
+    		//int timeStamp = trip.getPosition().getTimestamp();
     		
     		for (int i = 0, j = 1; j < trip.getPredictions().size(); i++, j++) {
         		Prediction p1 = trip.getPredictions().get(i);
         		Prediction p2 = trip.getPredictions().get(j);
         		
-        		int weight;
+        		int weight = p2.getSeconds();
         		// Adjust for the current time
+        		/*
         		if (timeStamp == 0) {
         			weight = p2.getSeconds() + dataTime;
         		} else {
         			weight = p2.getSeconds() + timeStamp;
         		}
-        		
+        		*/
         		String line = trip.getLine();
         		String tripID = trip.getTripID();
         		String startStation = p1.getStop();
         		String endStation = p2.getStop();
         		Station ss = getStationByName(arrs, startStation);
         		Station es = getStationByName(arrs, endStation);
-        		g.addEdge(weight, line, tripID, ss, es);
+        		String destination = trip.getDestination();
+        		g.addEdge(weight, line, tripID, ss, es, destination);
         		
-        		int w = p1.getSeconds() + timeStamp;
+        		int w = p1.getSeconds(); // + timeStamp;
     			if ((i == 0) && (w >= 0)) {			// If at the first station in the list, 
-    				g.addEdge(w, line, tripID, nullStation, ss);
+    				g.addEdge(w, line, tripID, nullStation, ss, destination);
     			}
         	}
     	}
@@ -458,88 +511,71 @@ public class JsonTest
     }
 
     
-    private static Pathway<TrainConnection> fastestPath(Station start, Station end, int currentTime, int departByTime, int arriveByTime, boolean withFewestTransfers) {
-        String testBlue = "Resources/Test Files/TestBlue_2012_10_19.json";
-        String testOrange = "Resources/Test Files/TestOrange_2012_10_19.json";
-        String testRed = "Resources/Test Files/TestRed_2012_10_19.json";
-
-        String shortTestBlue = "Resources/Test Files/shortTestBlue.json";
-        String shortTestBlue2 = "Resources/Test Files/shortTestBlue2.json";
-        String shortTestOrange = "Resources/Test Files/shortTestOrange.json";
-        String shortTestRed = "Resources/Test Files/shortTestRed.json";
-        
-        String LIVE_DATA_BLUE = "http://developer.mbta.com/lib/rthr/blue.json";
-        String LIVE_DATA_ORANGE = "http://developer.mbta.com/lib/rthr/orange.json";
-        String LIVE_DATA_RED = "http://developer.mbta.com/lib/rthr/red.json";
-
+    private static Pathway<TrainConnection> fastestPath(String start, String end, int currentTime, int departByTime, int arriveByTime, boolean withFewestTransfers) {
         ArrayList<String> fileLocations = new ArrayList<String>();
         fileLocations.add(shortTestBlue2);
         fileLocations.add(shortTestOrange);
         fileLocations.add(shortTestRed);
 
-        TripList tripl = new TripList();
-        try {
-        	tripl = jsonFilesToTripList(fileLocations, false);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Graph g = new Graph();
+        g = getGraphFromInternet();
+        //g = getGraphFromFiles(fileLocations);
+        Station startStation = g.getStationByName(start);
+        Station endStation = g.getStationByName(end);
         
-    	Graph g = new Graph();
-        tripListToGraph(tripl, g);
-        
-        return g.depthFirstSearch(start, end, currentTime, departByTime, arriveByTime, withFewestTransfers);
+        return g.depthFirstSearch(startStation, endStation, currentTime, departByTime, arriveByTime, withFewestTransfers);
     }
     
-    public static Pathway<TrainConnection> fastestPathWithDepart(Station start, Station end, int departByTime) {
+    public static Pathway<TrainConnection> fastestPathWithDepart(String start, String end, int departByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
     	int inf = (int) Double.POSITIVE_INFINITY;
 
     	return JsonTest.fastestPath(start, end, timeNow, departByTime, inf, false);
     }
-    public static Pathway<TrainConnection> fastestPathWithNoContraints(Station start, Station end) {
+    public static Pathway<TrainConnection> fastestPathWithNoContraints(String start, String end) {
     	int timeNow = JsonTest.getCurrentEpochTime();
     	int inf = (int) Double.POSITIVE_INFINITY;
 
     	return JsonTest.fastestPath(start, end, timeNow, 0, inf, false);
     }
-    public static Pathway<TrainConnection> fastestPathWithDepartArrive(Station start, Station end, int departByTime, int arriveByTime) {
+    public static Pathway<TrainConnection> fastestPathWithDepartArrive(String start, String end, int departByTime, int arriveByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
 
     	return JsonTest.fastestPath(start, end, timeNow, departByTime, arriveByTime, false);
     }
-    public static Pathway<TrainConnection> fastestPathWithArrive(Station start, Station end, int arriveByTime) {
+    public static Pathway<TrainConnection> fastestPathWithArrive(String start, String end, int arriveByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
 
     	return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, false);
     }
-    public static Pathway<TrainConnection> fastestPathWithArriveFewestTransfers(Station start, Station end,int arriveByTime) {
+    public static Pathway<TrainConnection> fastestPathWithArriveFewestTransfers(String start, String end,int arriveByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
     	
     	return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, true);
     }
     public static Pathway<TrainConnection> 
     				fastestPathWithDepartArriveFewestTransfers(
-    										Station start, Station end, 
+    										String start, String end, 
     										int departBy, int arriveByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
 
     	//return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, true);
     	return null;																	/// FIXME
     }
-    public static Pathway<TrainConnection> fastestPathWithDepartFewestTransfers(Station start,Station end, int departByTime) {
+    public static Pathway<TrainConnection> fastestPathWithDepartFewestTransfers(String start, String end, int departByTime) {
     	int timeNow = JsonTest.getCurrentEpochTime();
     	int inf = (int) Double.POSITIVE_INFINITY;
     	
     	return JsonTest.fastestPath(start, end, timeNow, departByTime, inf, true);
     }
-    public static Pathway<TrainConnection> fastestPathWithFewestTransfers(Station start, Station end) {
+    public static Pathway<TrainConnection> fastestPathWithFewestTransfers(String start, String end) {
        	int timeNow = JsonTest.getCurrentEpochTime();
     	int inf = (int) Double.POSITIVE_INFINITY;
     	
     	return JsonTest.fastestPath(start, end, timeNow, timeNow, inf, true);
     }
     
-    private static Pathway<TrainConnection> fastestSortedPath(ArrayList<Station> arrs, 
+    public static Pathway<TrainConnection> fastestSortedPath(ArrayList<String> arrs, 
     					boolean shouldDepartBy, int departByTime, 
     					boolean shouldArriveBy, int arriveByTime, 
     					boolean withFewestTransfers) {
@@ -547,40 +583,51 @@ public class JsonTest
     	
     	for (int i = 0, j = 1; j < arrs.size(); i++, j++) {
     		Pathway<TrainConnection> tempPath = new Pathway<TrainConnection>(0);
+    		if (!(path.size() == 0)) {
+    			departByTime = path.getTime();
+    		}
+    		
     		if (shouldDepartBy) {
     			if (shouldArriveBy) {
     				if (withFewestTransfers) {
-    					path = fastestPathWithDepartArriveFewestTransfers(arrs.get(i), arrs.get(j), 
+    					tempPath = fastestPathWithDepartArriveFewestTransfers(arrs.get(i), arrs.get(j), 
     																	departByTime, arriveByTime);
     				} else {
-    					path = fastestPathWithDepartArrive(arrs.get(i), arrs.get(j), 
+    					tempPath = fastestPathWithDepartArrive(arrs.get(i), arrs.get(j), 
     													departByTime, arriveByTime);
     				}
     			} else {
     				if (withFewestTransfers) {
-    					path = fastestPathWithDepartFewestTransfers(arrs.get(i), arrs.get(j),
+    					tempPath = fastestPathWithDepartFewestTransfers(arrs.get(i), arrs.get(j),
     																departByTime);
     				} else {
-    					path = fastestPathWithDepart(arrs.get(i), arrs.get(j), departByTime);
+    					tempPath = fastestPathWithDepart(arrs.get(i), arrs.get(j), departByTime);
     				}
     			}
     		} else if (shouldArriveBy) {
     			if (withFewestTransfers) {
-    				path = fastestPathWithArriveFewestTransfers(arrs.get(i), arrs.get(j),
+    				tempPath = fastestPathWithArriveFewestTransfers(arrs.get(i), arrs.get(j),
     														arriveByTime);
     			} else {
-    				path = fastestPathWithArrive(arrs.get(i), arrs.get(j), arriveByTime);
+    				tempPath = fastestPathWithArrive(arrs.get(i), arrs.get(j), arriveByTime);
     			}
     		} else {
     			if (withFewestTransfers) {
-    				path = fastestPathWithFewestTransfers(arrs.get(i), arrs.get(j));
+    				tempPath = fastestPathWithFewestTransfers(arrs.get(i), arrs.get(j));
     			} else {
-    				path = JsonTest.fastestPathWithNoContraints(arrs.get(i), arrs.get(j));
+    				tempPath = JsonTest.fastestPathWithNoContraints(arrs.get(i), arrs.get(j));
     			}
+    		}
+    		
+    		if (tempPath.size() == 0) {
+    			path.clear();
+    			break;
+    		} else {
+        		path.append(tempPath);
     		}
     	}
     	
-    	return null;
+    	return path;
     }
     
     public static ArrayList<Station> listOfStationNameToListOfStations(ArrayList<String> arrString, Graph g) {
@@ -595,6 +642,29 @@ public class JsonTest
         long ct = System.currentTimeMillis()/1000;
         int cti = (int) ct;
         return cti;
+    }
+    
+    public static ArrayList<Train> getAllTrains(boolean fromInternet) {
+    	// need to find the files somehow
+        ArrayList<String> fileLocations = new ArrayList<String>();
+        fileLocations.add(shortTestBlue2);
+        fileLocations.add(shortTestOrange);
+        fileLocations.add(shortTestRed);
+
+        Graph g = new Graph();
+        g = getGraphFromInternet();
+    	
+        Station s = g.getStationByName("NULL_STATION");
+        ArrayList<Train> arrT = new ArrayList<Train>();
+        for (Edge e : s.getAllOutgoingEdges()) {
+        	int time = e.getWeight();
+        	String destination = e.getDestination();
+        	
+        	Train tempTrain = new Train(s.getName(), time, destination);
+        	arrT.add(tempTrain);
+        }
+        
+    	return arrT;
     }
 }
 
