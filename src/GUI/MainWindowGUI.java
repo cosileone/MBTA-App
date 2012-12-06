@@ -11,6 +11,7 @@ import javax.swing.*;
 
 public class MainWindowGUI extends JFrame {
 	public ArrayList<String> journey = new ArrayList<String>();
+	public boolean sortedList = false;
 	
 	public MainWindowGUI(){
 		initComponents();
@@ -100,6 +101,11 @@ public class MainWindowGUI extends JFrame {
 		orangeDropdown.addActionListener(comboBoxListener);
 		
 		JCheckBox sortedCheckbox = new JCheckBox(SORT_DEST_CHECKBOX_TEXT);
+		sortedCheckbox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				sortedList = !sortedList;
+			}
+		});
 		
 		northPanel.add(inputField);
 		northPanel.add(submitDestination);
