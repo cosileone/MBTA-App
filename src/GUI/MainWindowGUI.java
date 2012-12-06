@@ -194,7 +194,27 @@ public class MainWindowGUI extends JFrame {
 	}
 	
 	private JPanel makeTestTab(){
-		JPanel initPanel = new JPanel();
+		JPanel initPanel = new JPanel(new BorderLayout());
+		JButton printTrains = new JButton("Print All Trains");
+		final JTextArea output = new JTextArea();
+		output.setEditable(false);
+		output.setText("Train and station data printed here");
+		
+		printTrains.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				Graph allData = DataFactory.fetchAllData(true);
+				ArrayList<Edge> allEdges = allData.getEdges();
+				String buffer = new String();
+				for (Edge e : allEdges){
+					buffer += "Train " + e.getTripID() + " on the " + e.getLine() + " line is about to arrive at " + e.getEndStation() + " and is heading to " + e.getDestination() + ".\n";
+				}
+				output.setText(buffer);
+			}
+		});
+		JScrollPane scrollingOutput = new JScrollPane(output);
+		initPanel.add(printTrains, BorderLayout.PAGE_START);
+		initPanel.add(scrollingOutput, BorderLayout.CENTER);
+		
 		return initPanel;
 	}
 	

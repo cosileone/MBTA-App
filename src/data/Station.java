@@ -89,7 +89,7 @@ public class Station {
 	
 	public String toString() {
 		String s = "";
-		s += "StationName:" + name;
+		s += name;
 		for (Edge e : outgoingEdges) {
 		//	s += " outgoingEdge" + e.toString() + "   ";
 		}
