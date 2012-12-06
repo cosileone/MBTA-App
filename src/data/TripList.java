@@ -5,15 +5,15 @@ import java.util.List;
 
 public class TripList
 {
-    private int currentTime;
+    private int currentEpochTime;
     private String line;
     private List<Trip> trips = new ArrayList<Trip>();
 
-    public int getCurrentTime() {
-        return this.currentTime;
+    public int getCurrentEpochTime() {
+        return this.currentEpochTime;
     }
-    public void setCurrentTime(int currentTime) {
-        this.currentTime = currentTime;
+    public void setCurrentEpochTime(int currentEpochTime) {
+        this.currentEpochTime = currentEpochTime;
     }
     public String getLine() {
         return this.line;
@@ -39,7 +39,7 @@ public class TripList
 
     @Override
     public String toString() {
-        String s = "TripList [currentTime=" + currentTime + ", line=" + line + ", trips=" + trips;
+        String s = "TripList [CurrentEpochTime=" + currentEpochTime + ", Line=" + line + ", Trips=" + trips;
 
         //        String strips = "";
         //        System.out.println("tripsLength= "+ trips.length);

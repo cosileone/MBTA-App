@@ -35,4 +35,9 @@ public class Pathway<T> extends ArrayList<T>{
 		int i = this.size() - 1;
 		this.remove(i);
 	}
+	public void append(Pathway<T> pt) {
+		for (T t : pt) {
+			this.add(t);
+		}
+	}
 }

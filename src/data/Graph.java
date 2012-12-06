@@ -54,14 +54,14 @@ public class Graph {
     }
     
     
-    public boolean addEdge(int time, String line, String tripID, Station from, Station to) throws IllegalArgumentException {
+    public boolean addEdge(int time, String line, String tripID, Station from, Station to, String destination) throws IllegalArgumentException {
         if(!stations.contains(from)) {
             throw new IllegalArgumentException("from is not in graph");
         }
         if(!stations.contains(to)) {
             throw new IllegalArgumentException("to is not in graph");
         }
-        Edge e = new Edge(time, line, tripID, from, to);
+        Edge e = new Edge(time, line, tripID, from, to, destination);
         from.addOutgoingEdge(e);
         to.addIncomingEdge(e);
         edges.add(e);
@@ -97,7 +97,7 @@ public class Graph {
         	Pathway<TrainConnection> tempPathway = new Pathway<TrainConnection>(arriveByTime);
             Edge e = startStation.getIncomingEdge(i);
             
-            /*
+            
             System.out.println("CurrentTimeSentToGraph=" + currentTime);
             System.out.println("DepartByTimeSentToGraph=" + departByTime);
             System.out.println("ArriveByTimeSentToGraph=" + arriveByTime);
@@ -105,7 +105,7 @@ public class Graph {
             System.out.println("Edge=" + e);
             System.out.println("++++++++++++");
             System.out.println("++++++++++++");
-			*/
+			
 
             if((e.getWeight() - departByTime) >= 0) {		
             	// And since we've already departed, we don't need to pass the variable to dfsHelper (only arrivalTime)
