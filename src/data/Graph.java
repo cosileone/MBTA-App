@@ -90,14 +90,14 @@ public class Graph {
     											int currentTime, int departByTime, 
     											int arriveByTime, boolean withFewestTransfer) {
     	Pathway<TrainConnection> pathway = new Pathway<TrainConnection>(arriveByTime);    	
-    	System.out.println("PathwayTime=" + pathway.getTime());
+    	//System.out.println("PathwayTime=" + pathway.getTime());
     	
         for (int i = 0; i < startStation.getIncomingEdgeCount(); i++) {
     	//for (int i = 0; i < startStation.getPotentialIncomingPathEdgeCount(departByTime); i++) {
         	Pathway<TrainConnection> tempPathway = new Pathway<TrainConnection>(arriveByTime);
             Edge e = startStation.getIncomingEdge(i);
             
-            
+            /*
             System.out.println("CurrentTimeSentToGraph=" + currentTime);
             System.out.println("DepartByTimeSentToGraph=" + departByTime);
             System.out.println("ArriveByTimeSentToGraph=" + arriveByTime);
@@ -105,7 +105,7 @@ public class Graph {
             System.out.println("Edge=" + e);
             System.out.println("++++++++++++");
             System.out.println("++++++++++++");
-			
+			*/
 
             if((e.getWeight() - departByTime) >= 0) {		
             	// And since we've already departed, we don't need to pass the variable to dfsHelper (only arrivalTime)
