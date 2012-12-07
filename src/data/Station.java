@@ -14,10 +14,10 @@ public class Station {
 	
 	public void addOutgoingEdge(Edge e) {
 		/// sort this shit
-		if(!this.name.equals("NULL_STATION")) {
+		//if(!this.name.equals("NULL_STATION")) {
 			this.outgoingEdges.add(e);
 			Collections.sort(this.outgoingEdges, Edge.EdgeWeightComparator);	
-		}
+		//}
 	}
 	public ArrayList<Edge> getAllOutgoingEdges() {
 		return this.outgoingEdges;
@@ -91,10 +91,10 @@ public class Station {
 		String s = "";
 		s += name;
 		for (Edge e : outgoingEdges) {
-		//	s += " outgoingEdge" + e.toString() + "   ";
+			s += " outgoingEdge" + e.toString() + "   ";
 		}
 		for (Edge e : incomingEdges) {
-		//	s += " incomingEdge" + e.toString() + "   ";
+			s += " incomingEdge" + e.toString() + "   ";
 		}
 		return s;
 	}

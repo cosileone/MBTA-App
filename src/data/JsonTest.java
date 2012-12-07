@@ -5,9 +5,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.TimeZone;
+
+import static GUI.Constants.*;
 
 //import java.io.File;
 //import com.fasterxml.jackson.core.*;
@@ -36,9 +42,7 @@ public class JsonTest
 	private final static String RED_B_LINE = "red_b";
 	private final static String ORANGE_LINE = "orange";
 	private final static String TRANSFER_LINE = "transfer";
-	private final static String LIVE_DATA_BLUE = "http://developer.mbta.com/lib/rthr/blue.json";
-	private final static String LIVE_DATA_ORANGE = "http://developer.mbta.com/lib/rthr/orange.json";
-	private final static String LIVE_DATA_RED = "http://developer.mbta.com/lib/rthr/red.json";
+
 	
 	private final static String testBlue = "Resources/Test Files/TestBlue_2012_10_19.json";
 	private final static String testOrange = "Resources/Test Files/TestOrange_2012_10_19.json";
@@ -164,111 +168,15 @@ public class JsonTest
     
     
     public static void main(String[] args) {
-    		/*
-            ArrayList<String> files = new ArrayList<String>();
-            files.add(shortTestBlue2);
-            files.add(shortTestOrange);
-            files.add(shortTestRed);
-
-            Graph g = new Graph();
-            g = getGraphFromFiles(files);
-*/
-    		/*
-            int currentTime = (int) System.currentTimeMillis();
-            long currTime = System.currentTimeMillis();
-            long ct = System.currentTimeMillis()/1000;
-            int cti = (int) ct;
-
-
-            //int currentTime = 0;
-
-            int largeInt = 20000 + currentTime;
-            System.out.println("currentTime=" + currentTime);
-            System.out.println("currTime=" + currTime);
-            System.out.println("ct=" + ct);
-            System.out.println("cti=" + cti);
-            System.out.println("1762123476");
-            */
-            /*
-            Station airport = g.getStationByName("Airport");
-            Station aquarium = g.getStationByName("Aquarium");
-            Station maverick = g.getStationByName("Maverick");
-            Station gov = g.getStationByName("Government Center");
-            Station backbay = g.getStationByName("Back Bay");
-            Station porter = g.getStationByName("Porter Square");
-            Station harvard = g.getStationByName("Harvard Square");
-            Station savHill = g.getStationByName("Savin Hill");
-            Station braintree = g.getStationByName("Braintree");
-            
-            System.out.println("Graph:" + g.toString());
-            */
-            
-            // A thing to note, we define quickest path as a path that gets you there the soonest
-            //  rather than one that gets you there the soonest and in the least amount of travel time
-            //  although, I don't think the latter would be overly difficult to implement.
-
-
-            /*
-            Pathway<TrainConnection> am = g.depthFirstSearch(airport, maverick, currentTime, 0, largeInt);
-            Pathway<TrainConnection> am2 = fastestPathWithNoContraints(airport, maverick);
-            System.out.println(am.toString());
-            System.out.println(am2.toString());
-            
-            System.out.println("+++++++++++++++++++++++++++++");
-            
-            Pathway<TrainConnection> ma = g.depthFirstSearch(maverick, airport, currentTime, 0, largeInt);
-            Pathway<TrainConnection> ma2 = fastestPathWithNoContraints(maverick, airport);
-            System.out.println(ma.toString());
-            System.out.println(ma2.toString());
-            
-            System.out.println("+++++++++++++++++++++++++++++");
-*/
-            //currentTime = 1350686050;
-            
-            //  1354672388
-            
-            /*     SITUATION_1
-            CurrentTime = 		1354668399
-            Airport=			1354671871
-            Maverick=			1354672113
-            Aquarium=			1354672251
-            State Street=		1354672325
-            Government Center=	1354672406
-            
-            
-            
-            SITUATION_2
-            CurrentTime=		1354688399
-            Airport=			1354671923
-            Maverick=			1354672068
-            Aquarium=			1354672204
-            State Street=		1354672278
-            Government Center=	1354672359
-            */
-            /*
-            System.out.println("LARGE_INT EVERYONE=" + largeInt);
-            Pathway<TrainConnection> ag = g.depthFirstSearch(airport, gov, currentTime, currentTime, largeInt);
-            Pathway<TrainConnection> ag2 = fastestPathWithNoContraints(airport, gov);
-            System.out.println("+++++++++++++++++++++++++++++ RESULT 1 +++++++++++++++++++++++++++++");
-            System.out.println(ag.toString());
-            System.out.println("+++++++++++++++++++++++++++++ RESULT 2 +++++++++++++++++++++++++++++");
-            System.out.println(ag2.toString());
-
-            System.out.println("+++++++++++++++++++++++++++++");
-            
-            */
-            
-            //System.out.println("LARGE_INT EVERYONE=" + largeInt);
-            
-            
+         
             int tNow = JsonTest.getCurrentEpochTime();
             //Pathway<TrainConnection> ag = g.depthFirstSearch(airport, aquarium, cti, cti, largeInt, false);
-            Pathway<TrainConnection> ag = fastestPathWithDepart(Stop.AIRPORT.name, Stop.AQUARIUM.name, tNow);
-            Pathway<TrainConnection> ag2 = fastestPathWithNoContraints(Stop.AIRPORT.name, Stop.AQUARIUM.name);
+            Pathway<TrainConnection> ag = fastestPath(Stop.AIRPORT.name, Stop.AQUARIUM.name, tNow, (int) Double.POSITIVE_INFINITY, 0);
+            //Pathway<TrainConnection> ag2 = fastestPath(Stop.AIRPORT.name, Stop.AQUARIUM.name);
             System.out.println("+++++++++++++++++++++++++++++ RESULT 1 +++++++++++++++++++++++++++++");
             System.out.println(ag.toString());
-            System.out.println("+++++++++++++++++++++++++++++ RESULT 2 +++++++++++++++++++++++++++++");
-            System.out.println(ag2.toString());
+            //System.out.println("+++++++++++++++++++++++++++++ RESULT 2 +++++++++++++++++++++++++++++");
+            //System.out.println(ag2.toString());
 
             System.out.println("+++++++++++++++++++++++++++++");
             
@@ -278,10 +186,11 @@ public class JsonTest
             ArrayList<String> aas = new  ArrayList<String>();
             aas.add(Stop.AIRPORT.name);
             aas.add(Stop.AQUARIUM.name);
-            aas.add(Stop.GOVERNMENT_CENTER.name);
+            //aas.add(Stop.GOVERNMENT_CENTER.name);
             //System.out.println("PERMUTATIONS=" + permutationsOf(aas));
-            Pathway<TrainConnection> aag = fastestUnsortedPath(aas, false, 0, false, 0, false);
+            Pathway<TrainConnection> aag = fastestUnsortedPath(aas, tNow, (int) Double.POSITIVE_INFINITY, 2);
             System.out.println(aag.toString());
+            System.out.println("Got here");
 
             /*
             Pathway<TrainConnection> g1 = g.depthFirstSearch(airport, gov, 0, 0, largeInt);
@@ -292,56 +201,7 @@ public class JsonTest
             System.out.println(g2.toString());
 
             System.out.println("+++++++++++++++++++++++++++++");
-            
-/*
-            Pathway<TrainConnection> ga = g.depthFirstSearch(gov, airport, currentTime, 0, largeInt);
-            Pathway<TrainConnection> ga2 = fastestPathWithNoContraints(gov, airport);
-            System.out.println(ga.toString());
-            System.out.println(ga2.toString());
-            
-            System.out.println("+++++++++++++++++++++++++++++");
 
-            Pathway<TrainConnection> abb = g.depthFirstSearch(airport, backbay, currentTime, 0, largeInt);
-            Pathway<TrainConnection> abb2 = fastestPathWithNoContraints(airport, backbay);
-            System.out.println(abb.toString());
-            System.out.println(abb2.toString());
-
-            System.out.println("+++++++++++++++++++++++++++++");
-
-            Pathway<TrainConnection> bba = g.depthFirstSearch(backbay, airport, currentTime, 0, largeInt);
-            Pathway<TrainConnection> bba2 = fastestPathWithNoContraints(backbay, airport);
-            System.out.println(bba.toString());
-            System.out.println(bba2.toString());
-
-            System.out.println("+++++++++++++++++++++++++++++");
-
-            
-            // RED
-            Pathway<TrainConnection> ph = g.depthFirstSearch(harvard, porter, currentTime, 0, largeInt);
-            Pathway<TrainConnection> ph2 = fastestPathWithNoContraints(harvard, porter);
-            System.out.println(ph.toString());
-            System.out.println(ph2.toString());
-            
-            System.out.println("+++++++++++++++++++++++++++++");
-
-            Pathway<TrainConnection> hp = g.depthFirstSearch(porter, harvard, currentTime, 0, largeInt);
-            Pathway<TrainConnection> hp2 = fastestPathWithNoContraints(porter, harvard);
-            System.out.println(hp.toString());
-            System.out.println(hp2.toString());
-            
-            System.out.println("+++++++++++++++++++++++++++++");
-
-            Pathway<TrainConnection> sb = g.depthFirstSearch(savHill, braintree, currentTime, 0, largeInt);
-            Pathway<TrainConnection> sb2 = fastestPathWithNoContraints(savHill, braintree);
-            System.out.println(sb.toString());
-            System.out.println(sb2.toString());
-            
-            System.out.println("+++++++++++++++++++++++++++++");
-
-            Pathway<TrainConnection> bs = g.depthFirstSearch(braintree, savHill, currentTime, 0, largeInt);
-            Pathway<TrainConnection> bs2 = fastestPathWithNoContraints(braintree, savHill);
-            System.out.println(bs.toString());
-            System.out.println(bs2.toString());
 */
     }
 
@@ -440,8 +300,9 @@ public class JsonTest
                     	tempPred.setSeconds(tSeconds + tripl.getCurrentEpochTime());
                     }
                     
-
-                    tempTrip.addPrediction(tempPred);
+                    if((tempPred.getSeconds() - getCurrentEpochTime()) > 0) {
+                        tempTrip.addPrediction(tempPred);
+                    }
                 }
 
                 tripl.addTrip(tempTrip);
@@ -475,9 +336,10 @@ public class JsonTest
         		String tripID = trip.getTripID();
         		String startStation = p1.getStop();
         		String endStation = p2.getStop();
-        		Station ss = getStationByName(arrs, startStation);
-        		Station es = getStationByName(arrs, endStation);
+        		Station ss = g.getStationByName(startStation);
+        		Station es = g.getStationByName(endStation);
         		String destination = trip.getDestination();
+        		//Edge e  = new Edge(weight, line, tripID, ss, es, destination);
         		g.addEdge(weight, line, tripID, ss, es, destination);
         		
         		int w = p1.getSeconds();
@@ -487,18 +349,8 @@ public class JsonTest
         	}
     	}
     }
-    	
-    public static Station getStationByName(ArrayList<Station> arrs, String name) {
-    	for (Station s : arrs) {
-    		if (s.getName().equals(name)) {
-    			return s;
-    		}
-    	}
-    	throw new IllegalArgumentException(name + " is not in the list");
-    }
-
     
-    private static Pathway<TrainConnection> fastestPath(String start, String end, int currentTime, int departByTime, int arriveByTime, boolean withFewestTransfers) {
+    private static Pathway<TrainConnection> fastestPath(String start, String end, int departByTime, int arriveByTime, int userCondition) {
         ArrayList<String> fileLocations = new ArrayList<String>();
         fileLocations.add(shortTestBlue2);
         fileLocations.add(shortTestOrange);
@@ -510,137 +362,75 @@ public class JsonTest
         Station startStation = g.getStationByName(start);
         Station endStation = g.getStationByName(end);
         
-        return g.depthFirstSearch(startStation, endStation, currentTime, departByTime, arriveByTime, withFewestTransfers);
+        return g.depthFirstSearch(startStation, endStation, departByTime, arriveByTime, userCondition);
     }
+
     
-    public static Pathway<TrainConnection> fastestPathWithDepart(String start, String end, int departByTime) {
-    	int timeNow = JsonTest.getCurrentEpochTime();
-    	int inf = (int) Double.POSITIVE_INFINITY;
-
-    	return JsonTest.fastestPath(start, end, timeNow, departByTime, inf, false);
-    }
-    public static Pathway<TrainConnection> fastestPathWithNoContraints(String start, String end) {
-    	int timeNow = JsonTest.getCurrentEpochTime();
-    	int inf = (int) Double.POSITIVE_INFINITY;
-
-    	return JsonTest.fastestPath(start, end, timeNow, 0, inf, false);
-    }
-    public static Pathway<TrainConnection> fastestPathWithDepartArrive(String start, String end, int departByTime, int arriveByTime) {
-    	int timeNow = JsonTest.getCurrentEpochTime();
-
-    	return JsonTest.fastestPath(start, end, timeNow, departByTime, arriveByTime, false);
-    }
-    public static Pathway<TrainConnection> fastestPathWithArrive(String start, String end, int arriveByTime) {
-    	int timeNow = JsonTest.getCurrentEpochTime();
-
-    	return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, false);
-    }
-    public static Pathway<TrainConnection> fastestPathWithArriveFewestTransfers(String start, String end,int arriveByTime) {
-    	int timeNow = JsonTest.getCurrentEpochTime();
-    	
-    	return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, true);
-    }
-    public static Pathway<TrainConnection> 
-    				fastestPathWithDepartArriveFewestTransfers(
-    											String start, String end, 
-    											int departBy, int arriveByTime) {
-    	int timeNow = JsonTest.getCurrentEpochTime();
-
-    	//return JsonTest.fastestPath(start, end, timeNow, timeNow, arriveByTime, true);
-    	return null;																	/// FIXME
-    }
-    public static Pathway<TrainConnection> fastestPathWithDepartFewestTransfers(String start, String end, int departByTime) {
-    	int timeNow = JsonTest.getCurrentEpochTime();
-    	int inf = (int) Double.POSITIVE_INFINITY;
-    	
-    	return JsonTest.fastestPath(start, end, timeNow, departByTime, inf, true);
-    }
-    public static Pathway<TrainConnection> fastestPathWithFewestTransfers(String start, String end) {
+    public static Pathway<TrainConnection> fastestSortedPath(ArrayList<String> arrs, 
+    												int departByTime, 
+    												int arriveByTime, 
+    												int userCondition) {
+    	Pathway<TrainConnection> path = new Pathway<TrainConnection>(0);
        	int timeNow = JsonTest.getCurrentEpochTime();
     	int inf = (int) Double.POSITIVE_INFINITY;
     	
-    	return JsonTest.fastestPath(start, end, timeNow, timeNow, inf, true);
-    }
-    
-    public static Pathway<TrainConnection> fastestSortedPath(ArrayList<String> arrs, 
-    												boolean shouldDepartBy, int departByTime, 
-    												boolean shouldArriveBy, int arriveByTime, 
-    												boolean withFewestTransfers) {
-    	Pathway<TrainConnection> path = new Pathway<TrainConnection>(0);
-    	
     	for (int i = 0, j = 1; j < arrs.size(); i++, j++) {
-    		Pathway<TrainConnection> tempPath = new Pathway<TrainConnection>(0);
+    		Pathway<TrainConnection> tempPath = new Pathway<TrainConnection>(inf);
     		if (!(path.size() == 0)) {
     			departByTime = path.getTime();
+    			path.removeLastElement();
     		}
-    		
-    		if (shouldDepartBy) {
-    			if (shouldArriveBy) {
-    				if (withFewestTransfers) {
-    					tempPath = fastestPathWithDepartArriveFewestTransfers(arrs.get(i), arrs.get(j), 
-    																	departByTime, arriveByTime);
-    				} else {
-    					tempPath = fastestPathWithDepartArrive(arrs.get(i), arrs.get(j), 
-    													departByTime, arriveByTime);
-    				}
-    			} else {
-    				if (withFewestTransfers) {
-    					tempPath = fastestPathWithDepartFewestTransfers(arrs.get(i), arrs.get(j),
-    																departByTime);
-    				} else {
-    					tempPath = fastestPathWithDepart(arrs.get(i), arrs.get(j), departByTime);
-    				}
-    			}
-    		} else if (shouldArriveBy) {
-    			if (withFewestTransfers) {
-    				tempPath = fastestPathWithArriveFewestTransfers(arrs.get(i), arrs.get(j),
-    														arriveByTime);
-    			} else {
-    				tempPath = fastestPathWithArrive(arrs.get(i), arrs.get(j), arriveByTime);
-    			}
-    		} else {
-    			if (withFewestTransfers) {
-    				tempPath = fastestPathWithFewestTransfers(arrs.get(i), arrs.get(j));
-    			} else {
-    				tempPath = JsonTest.fastestPathWithNoContraints(arrs.get(i), arrs.get(j));
-    			}
-    		}
-    		
-    		if (tempPath.size() == 0) {
-    			path.clear();
-    			break;
-    		} else {
-        		path.append(tempPath);
-    		}
+    		tempPath.setTo(fastestPath(arrs.get(i), arrs.get(j), departByTime, arriveByTime, userCondition));
+    		path.append(tempPath);
     	}
     	return path;
     }
     
+    
     public static Pathway<TrainConnection> fastestUnsortedPath(ArrayList<String> arrs, 
-														boolean shouldDepartBy, int departByTime, 
-														boolean shouldArriveBy, int arriveByTime, 
-														boolean withFewestTransfers) {
+														int departByTime, 
+														int arriveByTime, 
+														int userCondition) {
+    	// Should take an int that tells us whether the user want to get earliest arival/departure | fastest route | fewest transfers
     	
     	int inf = (int) Double.POSITIVE_INFINITY;
     	Pathway<TrainConnection> pathway = new Pathway<TrainConnection>(inf);
     	ArrayList<String> loStations = new ArrayList<String>();
     	ArrayList<ArrayList<String>> loStationsPermutations = new ArrayList<ArrayList<String>>();
     	loStationsPermutations = permutationsOf(arrs);
-    	
+    	int i = 0;
+    	    	
     	for (ArrayList<String> los : loStationsPermutations) {
     		Pathway<TrainConnection> tempPathway = new Pathway<TrainConnection>(inf);
-        	tempPathway = JsonTest.fastestSortedPath(los, shouldDepartBy, departByTime, shouldArriveBy, arriveByTime, withFewestTransfers);
+        	tempPathway.setTo(JsonTest.fastestSortedPath(los, departByTime, arriveByTime, userCondition));
 
-    		if (tempPathway.size() > 0) {
-    			if (withFewestTransfers) {
+    		if (pathway.size() > 0) {
+				switch (userCondition) {
+				case 0: //fastest route
+    				if (tempPathway.totalTimeTraveled() < pathway.totalTimeTraveled()) {
+    					pathway.setTo(tempPathway);
+    					break;
+    				}
+					break;
+				case 1: // fewest transfers
     				if (tempPathway.numTransfers() < pathway.numTransfers()) {
-    					pathway = tempPathway;
+    					pathway.setTo(tempPathway);
+    					break;
     				}
-    			} else {
+					break;
+				case 2: // earliest departure
+    				if (tempPathway.get(0).getTime() < pathway.get(0).getTime()) {
+    					pathway.setTo(tempPathway);
+    					break;
+    				}
+					break;
+				default: // earliest arrival
     				if (tempPathway.getTime() < pathway.getTime()) {
-    					pathway = tempPathway;
+    					pathway.setTo(tempPathway);
+    					break;
     				}
-    			}
+					break;
+				}
     		}
     	}
     	return pathway;
@@ -661,28 +451,29 @@ public class JsonTest
         return cti;
     }
     
-    public static ArrayList<Train> getAllTrains(boolean fromInternet) {
-    	// need to find the files somehow
-        ArrayList<String> fileLocations = new ArrayList<String>();
-        fileLocations.add(shortTestBlue2);
-        fileLocations.add(shortTestOrange);
-        fileLocations.add(shortTestRed);
-
-        Graph g = new Graph();
-        g = getGraphFromInternet();
-    	
-        Station s = g.getStationByName("NULL_STATION");
-        ArrayList<Train> arrT = new ArrayList<Train>();
-        for (Edge e : s.getAllOutgoingEdges()) {
-        	int time = e.getWeight();
-        	String destination = e.getDestination();
-        	
-        	Train tempTrain = new Train(s.getName(), time, destination);
-        	arrT.add(tempTrain);
-        }
-        
-    	return arrT;
+    public static int humanReadableTimeToEpoch(String s) {
+    	// assuming the string is in form "HH:mm"
+    	//String timeFormat = "01/01/1970 01:00:00";
+    	long epoch = 0;
+		try {
+			epoch = new java.text.SimpleDateFormat("HH:mm:ss").parse(s).getTime() / 1000;
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return (int) epoch;
     }
+    
+    public static String epochToHumanReadable(int epoch) {
+    	String epochString = String.valueOf(epoch);
+    	long epoch1 = Long.parseLong( epochString );
+    	Date expiry = new Date( epoch1 * 1000 );
+		SimpleDateFormat sdf = new java.text.SimpleDateFormat("HH:mm:ss");
+		sdf.setTimeZone(TimeZone.getTimeZone("EST"));
+		String resultTime = sdf.format(expiry);
+		
+		return resultTime;
+    }
+    
 
     public static ArrayList<ArrayList<String>> permutationsOf(ArrayList<String> arrs) {
     	ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
@@ -723,26 +514,5 @@ public class JsonTest
     	return temp;
     }
     
-    public static ArrayList<Train> getAllTrainsIntoStation(String s, boolean fromInternet){
-        Graph g = new Graph();
-        g = getGraphFromInternet();
-        
-        //Station s = g.getStationByName("NULL_STATION");
-        ArrayList<Train> arrt = new ArrayList<Train>();
-        Station station = g.getStationByName(s);
-        
-        ArrayList<Station> arrS = new ArrayList<Station>();
-        for (Edge e : station.getAllIncomingEdges()) {
-        	// int time = e.getWeight();
-        	// String destination = e.getDestination();
-        	String stationName = station.getName();
-        	int arrivalTime = e.getWeight();
-        	String destination = e.getDestination();
-        	Train tempTrain = new Train(stationName, arrivalTime, destination);
-        	
-        	arrt.add(tempTrain);
-        }
-        return arrt;
-    }
 }
 
