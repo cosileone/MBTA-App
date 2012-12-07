@@ -13,6 +13,9 @@ public class MainWindowGUI extends JFrame {
 	public ArrayList<String> journey = new ArrayList<String>();
 	public boolean sortedList = false;
 	public int tripPreference = 0;
+	public int departByTime = 0;
+	public int arriveByTime = (int) Double.POSITIVE_INFINITY;
+	public Pathway<TrainConnection> resultPath;
 	
 	public MainWindowGUI(){
 		initComponents();
@@ -43,7 +46,7 @@ public class MainWindowGUI extends JFrame {
 		window.setVisible(true);
 	}
 	
-	protected JPanel makeMapTab(){
+	private JPanel makeMapTab(){
 		/* ---- Cyan wrapper ---- */
 		final JPanel mapPanel = new JPanel(new BorderLayout());
 		mapPanel.setBackground(Color.CYAN);
@@ -115,6 +118,30 @@ public class MainWindowGUI extends JFrame {
 				tripPreference = temp.getSelectedIndex();
 			}
 		});
+		int currEpochTime = JsonTest.getCurrentEpochTime();
+		ArrayList<String> loTimes = new ArrayList<String>();
+		for (int i = 0; i < 359; i++) { // six hours worth of time
+			int tempTime = currEpochTime + (60*i);
+			String hrf = JsonTest.epochToHumanReadable(tempTime);
+			loTimes.add(hrf);
+		}
+		String[] times = loTimes.toArray(new String[loTimes.size()]);
+		JComboBox departTime = new JComboBox(times);
+		departTime.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				JComboBox temp = (JComboBox) ae.getSource();
+				String time = (String) temp.getSelectedItem();
+				departByTime = JsonTest.humanReadableTimeToEpoch(time);
+			}
+		});
+		JComboBox arriveTime = new JComboBox(times);
+		arriveTime.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				JComboBox temp = (JComboBox) ae.getSource();
+				String time = (String) temp.getSelectedItem();
+				arriveByTime = JsonTest.humanReadableTimeToEpoch(time);
+			}
+		});
 		
 		northPanel.add(inputField);
 		northPanel.add(submitDestination);
@@ -124,6 +151,8 @@ public class MainWindowGUI extends JFrame {
 		northPanel.add(orangeDropdown);
 		northPanel.add(sortedCheckbox);
 		northPanel.add(tripStyles);
+		northPanel.add(departTime);
+		northPanel.add(arriveTime);
 		
 		mapPanel.add(northPanel, BorderLayout.PAGE_START);
 		/* ---- End North Section ---- */
@@ -155,7 +184,13 @@ public class MainWindowGUI extends JFrame {
 			public void actionPerformed(ActionEvent ae) {
 				JTabbedPane tabs = (JTabbedPane) mapPanel.getParent();
 				if(validJourney()){
+					if (sortedList) {
+						resultPath = JsonTest.fastestSortedPath(journey, departByTime, arriveByTime, tripPreference);
+					} else {
+						resultPath = JsonTest.fastestUnsortedPath(journey, departByTime, arriveByTime, tripPreference);
+					}
 					tabs.setSelectedIndex(1);
+					System.out.println(resultPath);
 				}
 				System.out.println(journey.toString());
 			}
@@ -184,8 +219,8 @@ public class MainWindowGUI extends JFrame {
 		linearMapRegion.setBackground(Color.CYAN);
 		linearMapRegion.add(linearMap);
 		
-		JTextArea instructions = new JTextArea(ITINERARY_FILLER);
-		instructions.setEditable(NOEDIT_INSTRUCTIONS);
+		JTextArea instructions = new JTextArea("Look to the command line for your trip.");
+		instructions.setEditable(false);
 		
 		itineraryPanel.add(linearMapRegion, BorderLayout.CENTER);
 		itineraryPanel.add(instructions, BorderLayout.LINE_END);
@@ -203,10 +238,12 @@ public class MainWindowGUI extends JFrame {
 		printTrains.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				Graph allData = DataFactory.fetchAllData(true);
-				ArrayList<Edge> allEdges = allData.getEdges();
+				ArrayList<Train> allTrains = allData.getAllTrains();
 				String buffer = new String();
-				for (Edge e : allEdges){
-					buffer += "Train " + e.getTripID() + " on the " + e.getLine() + " line is about to arrive at " + e.getEndStation() + " and is heading to " + e.getDestination() + ".\n";
+				
+				int currentTime = JsonTest.getCurrentEpochTime();
+				for (Train t : allTrains) {
+					buffer += "Train " + t.getTripID() + " on the " + t.getLine() + " line is about to arrive at " + t.getStation() + " in " + (t.getEpochTime() - currentTime) + " seconds, and is heading to " + t.getDestination() + ".\n";
 				}
 				output.setText(buffer);
 			}

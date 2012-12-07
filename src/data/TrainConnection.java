@@ -22,6 +22,6 @@ public class TrainConnection {
 	}
 	
 	public String toString() {
-		return "tripID:" + tripID + " station:" + station + " time:" + time;
+		return "tripID:" + tripID + " station:" + station + " time:" + JsonTest.epochToHumanReadable(time);
 	}
 }

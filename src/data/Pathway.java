@@ -55,4 +55,14 @@ public class Pathway<T> extends ArrayList<T>{
 			return counter;
 		}
 	}
+	public int totalTimeTraveled() {
+		/*
+		if (this.size() == 0) {
+			return (int) Double.POSITIVE_INFINITY;
+		} else {
+		*/
+			TrainConnection tcFirst = (TrainConnection) this.get(0);
+			return (this.getTime() - tcFirst.getTime());
+		//}
+	}
 }

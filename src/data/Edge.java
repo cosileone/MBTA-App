@@ -47,6 +47,6 @@ public class Edge {
 	
 	public String toString() {
 		return "weight:" + weight + " line:" + line + " tripID:" + tripID + 
-		" ss:" + startStation + " es:" + endStation;
+		" ss:" + startStation.getName() + " es:" + endStation.getName();
 	}
 }

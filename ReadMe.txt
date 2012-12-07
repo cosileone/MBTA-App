@@ -23,7 +23,7 @@ Just type "make run" in the CLI - no quotes
 
 $ make run
 
-After you have entered your destinations using the drop-down menus and/or by entering them by hand, simply press the "Plan My Trip!" button located at the bottom of the application window. You will be taken to the Itinerary view, where it will show you all the train information.
+After you have entered your destinations using the drop-down menus and/or by entering them by hand, and also selected the departing/arriving by times, if you want the trip sorted (the locking down the path), or unsorted, and also selected a drop down menu choice of wanting the earliest departure/arrival, fastest time - simply press the "Plan My Trip!" button located at the bottom of the application window. You will be taken to the Itinerary view, your train information will show up in the command line.
 
 ——————————————————————————————————————————————————————————————————
 
@@ -89,4 +89,11 @@ REQUIREMENTS:
 [X] The system should accept test data from file input.
 [X] User Interface
 [X] The system should include a user-friendly GUI. (Optional)
+
+
+If you want test data:
+JsonTest.java file - in the fastestPath method --- 
+        g = getGraphFromInternet();
+        //g = getGraphFromFiles(fileLocations); << Uncomment this, and add hardcode the files into fileLocations (an ArrayList).
+
 
