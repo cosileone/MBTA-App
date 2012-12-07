@@ -1,8 +1,6 @@
 package data;
 
 import java.util.ArrayList;
-//import java.util.Comparator;
-//import java.util.LinkedList;
 
 
 public class Graph {
@@ -47,7 +45,6 @@ public class Graph {
         return this.stations;
     }
     
-    // I'm not sure how you want this data packaged and sent.								## FIXME
     public ArrayList<Edge> getNearbyIncomingTrainsForStation(Station s) {
     	Station temp = getStationByName(s.getName());
     	return temp.getAllIncomingEdges();
@@ -72,69 +69,36 @@ public class Graph {
         return this.edges;
     }
 
-    /*
-    public void clearStationMarks() {
-        for (Station vert : stations) {
-            vert.clearMark();
-        }
-    }
-
-    public void clearEdgeMarks() {
-        for (Edge<T> edge : edges) {
-            edge.clearMark();
-        }
-    }
-    */
-
     public Pathway<TrainConnection> depthFirstSearch(Station startStation, Station endStation, 
-    											int currentTime, int departByTime, 
-    											int arriveByTime, boolean withFewestTransfer) {
-    	Pathway<TrainConnection> pathway = new Pathway<TrainConnection>(arriveByTime);    	
-    	//System.out.println("PathwayTime=" + pathway.getTime());
+    										 	int departByTime, 
+    											int arriveByTime, int userCondition) {
+
+    	Pathway<TrainConnection> pathway = new Pathway<TrainConnection>(arriveByTime);
     	
         for (int i = 0; i < startStation.getIncomingEdgeCount(); i++) {
-    	//for (int i = 0; i < startStation.getPotentialIncomingPathEdgeCount(departByTime); i++) {
         	Pathway<TrainConnection> tempPathway = new Pathway<TrainConnection>(arriveByTime);
             Edge e = startStation.getIncomingEdge(i);
-            
-            /*
-            System.out.println("CurrentTimeSentToGraph=" + currentTime);
-            System.out.println("DepartByTimeSentToGraph=" + departByTime);
-            System.out.println("ArriveByTimeSentToGraph=" + arriveByTime);
-            System.out.println("EdgeWeight=" + e.getWeight());
-            System.out.println("Edge=" + e);
-            System.out.println("++++++++++++");
-            System.out.println("++++++++++++");
-			*/
 
             if((e.getWeight() - departByTime) >= 0) {		
             	// And since we've already departed, we don't need to pass the variable to dfsHelper (only arrivalTime)
             	TrainConnection firstStop = new TrainConnection(e.getTripID(), 
             									e.getEndStation().getName(), e.getWeight());
                     	tempPathway.add(firstStop);
-                    	dfsHelper(startStation, endStation, pathway, tempPathway, arriveByTime);
-                    //break;
+                    	dfsHelper(startStation, endStation, pathway, tempPathway, arriveByTime, userCondition);
             }
         }
         return pathway;
     }
     
     private void dfsHelper(Station ss, Station es, Pathway<TrainConnection> completedPath, 
-    		Pathway<TrainConnection> tp, int arriveByTime) {
-    	
-    	int t;
-    	/*if(tp.isEmpty()) {			// shouldn't need it.
-    		t = 0;
-    	} else {
-    	*/
-    		t = tp.get(tp.size() - 1).getTime();
-    	//}
-    	int tempTime = t;
+    		Pathway<TrainConnection> tp, int arriveByTime, int userCondition) {
+    	// Should take an int that tells us whether the user want to get earliest arival/departure | fastest route | fewest transfers
+
+    	int t = tp.get(tp.size() - 1).getTime();
+       	int tempTime = t;
     	String tempTripID = tp.get(tp.size() - 1).getTripID();
     	
-    	//for (int i = 0; i < ss.getOutgoingEdgeCount(); i++) {
     	for (int i = 0; i < ss.getPotentialOutgoingPathEdgeCount(tempTime); i++) {
-    		//Edge e = ss.getOutgoingEdge(i);
     		Edge e = ss.getPotentialOutgoingPathEdge(i, tempTime);
     		if (!e.getTripID().equals(tempTripID)) {
     			// takes care of any transfers - only need to transfer if changing tripIDs
@@ -154,30 +118,88 @@ public class Graph {
     			// could potentially grab the latest, so make sure edges are sorted.
     			tp.add(tempTC);
     			if (!completedPath.isEmpty()) {
+    				switch (userCondition) {
+    				case 0: //fastest route
+        				if (tp.totalTimeTraveled() < completedPath.totalTimeTraveled()) {
+        					completedPath.setTo(tp);
+            				tp.removeLastElement();
+        					break;
+        				}
+    					break;
+    				case 1: // fewest transfers
+        				if (tp.numTransfers() < completedPath.numTransfers()) {
+        					completedPath.setTo(tp);
+            				tp.removeLastElement();
+        					break;
+        				}
+    					break;
+    				case 2: // earliest departure
+        				if (tp.get(0).getTime() < completedPath.get(0).getTime()) {
+        					completedPath.setTo(tp);
+            				tp.removeLastElement();
+        					break;
+        				}
+    					break;
+    				default: // earliest arrival
+        				if (tp.getTime() < completedPath.getTime()) {//||
+        						//tp.size() < completedPath.size()) {
+        					completedPath.setTo(tp);
+            				tp.removeLastElement();
+        					break;
+        				}
+    					break;
+    				}
+    				/*
     				if ((e.getWeight() < completedPath.get((completedPath.size() - 1)).getTime()) ||
     						tp.size() < completedPath.size()) {
     					completedPath.setTo(tp);
         				tp.removeLastElement();
     					break;
     				}
+    				*/
     			} else {
     				completedPath.setTo(tp);
     				tp.removeLastElement();
     				break;
     			}
     		} else {
-    			/*
-    			if (tempTC.getStation().equals("Park Street")) {
-    				int q = 999;
-    				q += 1;
-    			}
-    			*/
     			tp.add(tempTC);
-    			dfsHelper(e.getEndStation(), es, completedPath, tp, arriveByTime);
+    			dfsHelper(e.getEndStation(), es, completedPath, tp, arriveByTime, userCondition);
     		}
     	}
 		tp.removeLastElement();  	// If can't find anything from this station, pop it off.
     	// If we did find something, we would have already mutated completedPath.
+    }
+    
+    public ArrayList<Train> getAllTrains() {
+        Station s = this.getStationByName("NULL_STATION");
+        ArrayList<Train> arrT = new ArrayList<Train>();
+        for (Edge e : s.getAllOutgoingEdges()) {
+        	int time = e.getWeight();
+        	String destination = e.getDestination();
+        	
+        	Train tempTrain = new Train(e.getEndStation().getName(), time, destination, e.getLine(), e.getTripID());
+        	arrT.add(tempTrain);
+        }
+        
+    	return arrT;
+    }
+    
+    public ArrayList<Train> getAllTrainsIntoStation(String s){
+        ArrayList<Train> arrt = new ArrayList<Train>();
+        Station station = this.getStationByName(s);
+        
+        for (Edge e : station.getAllIncomingEdges()) {
+        	// int time = e.getWeight();
+        	// String destination = e.getDestination();
+        	String stationName = station.getName();
+        	int arrivalTime = e.getWeight();
+        	String destination = e.getDestination();
+        	Train tempTrain = new Train(stationName, arrivalTime, destination, e.getLine(), e.getTripID());
+        	
+        	arrt.add(tempTrain);
+        }
+        return arrt;
     }
     
     public String toString() {
