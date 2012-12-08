@@ -87,7 +87,7 @@ public class MainWindowGUI extends JFrame {
 			}
 		};
 		
-		JLabel dropdownLabel = new JLabel(DROPDOWN_LABEL_TEXT);
+		//JLabel dropdownLabel = new JLabel(DROPDOWN_LABEL_TEXT);
 		
 		JComboBox blueDropdown = new JComboBox(BLUE_STATIONS);
 		blueDropdown.setForeground(Color.BLUE);
